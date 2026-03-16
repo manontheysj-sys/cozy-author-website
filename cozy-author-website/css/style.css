@@ -1,0 +1,246 @@
+/* General Page Style */
+
+body {
+    font-family: "Gerogia", serif;
+    background-color: #f7faf9;
+    color: #2c3e40;
+    margin: 0;
+    line-height: 1.6;
+}
+
+/* Hero */
+.hero {
+    text-align: center;
+    padding: 60px 20px;
+    background: #f2f7f6;
+}
+
+.hero h1 {
+    font-size: 42px;
+    margin-bottom: 200px;
+}
+
+.hero p {
+    font-size: 18px;
+    max-width: 600px;
+    margin: auto;
+    margin-bottom: 30px;
+}
+
+/* Header */
+
+header {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #E8E1D8;
+}
+
+header h1 {
+    font-size: 42px;
+    margin-bottom: 10px;
+}
+
+/* Navigation */
+
+nav {
+    margin-top: 10px;
+}
+
+nav a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: #6f6257;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: #A7C7C1;
+}
+
+/* Main Layout*/
+
+main {
+    max-width: 900px;
+    margin: auto;
+    padding: 40px 20px;
+}
+
+/* Sections */
+
+section{
+    max-width: 1000px;
+    margin: auto;
+    padding: 60px 20px;
+}
+
+/* Form Styling */
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    max-width: 450px;
+    margin: auto;
+}
+
+/* Inputs */
+
+input, textarea {
+    padding: 12px;
+    border-radius: 6px;
+    border: 1px solid #DDD;
+    font-size: 14px;
+}
+
+/* Buttons */
+
+button {
+    padding: 12px;
+    border: none;
+    background-color: #A7C7C1;
+    color: white;
+    font-size: 15px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #8EB5AF;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #E8E1D8;
+}
+
+/* Book Grid Digital Bookshelf */
+.books-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220 px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.book-card {
+    background: #ffffff;
+    padding: 18px;
+    border-radius: 14px;
+    box-shadow: 0 8px 18px rgba(0,0,0,0.06);
+    text-align: center;
+    transition: transform 0.2s ease, box-shadow 0.2 ease;
+}
+
+.book-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px rgba(0,0,0,0.1);
+}
+
+.book-card img {
+    width: 150px;
+    border-radius: 10px;
+    margin-bottom: 12px;
+}
+
+.book-card h3 {
+    margin: 10px 0 6px;
+    font-size: 18px;
+}
+
+.book-card p {
+    font-size: 14px;
+    color: #6a7a7c
+}
+
+.book-card a {
+    font-weight: 600;
+    letter-spacing: 0.3px;
+}
+
+/* Services Cards */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.service-card {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12pc rgba(0, 0, 0, 0. 08);
+    transition: transform 0.2s;
+}
+
+.service-card:hover {
+    transform: translateY(-4px);
+}
+
+/* Journal Styling */
+.journal-entry {
+    background: white;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0. 08);
+}
+
+/* Newsletter Archive Styling */
+.newsletter-list {
+    list-style: none;
+    padding: 0;
+}
+
+.newsletter-list li{
+    margin-bottom: 10px;
+}
+
+.newsletter-list a{
+    text-decoration: none;
+    color: #6f6257;
+    font-weight: bold;
+}
+
+.newsletter-list a:hover{
+    color: #A7C7C1;
+}
+
+/* Remove default blue Links */
+a {
+    color: #4a6a73;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #2f4f57;
+    text-decoration: underline;
+}
+
+/* Author */
+.author-phot {
+    width: 180px;
+    border-radius: 12px;
+    margin: 20px 0;
+}
+
+.my-books h2 {
+    margin-top: 50px;
+    font-size: 28px;
+    color: #3a5a60;
+}
+
+.my-books .book-card {
+    background: #ffffff;
+    padding: 18px;
+    border-radius: 14px;
+    box-shadow: 0 8px 18px rgba(0,0,0,0.06);
+    transition: transform 0.2s ease, box-shadow 0.2 ease;
+    text-align: center;
+}
+
+.my-books .book-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px rgba(0,0,0,0.1);
+}
