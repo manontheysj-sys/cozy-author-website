@@ -244,3 +244,35 @@ a:hover {
     transform: translateY(-4px);
     box-shadow: 0 12px 24px rgba(0,0,0,0.1);
 }
+
+.book-links {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.book-button {
+    display: inline-block;
+    padding: 12px 20px;
+    background-color: #6e4b3a;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    width: fit-content;
+    transition: 0.3s ease;
+}
+
+.book-button:hover {
+    background-color: #8a5d46;
+}
+
+.book-button.secondary {
+    background-color: #9b7b68;
+}
+
+.book-button.disabled {
+    background-color: #c7b8ae;
+    pointer-events: none;
+    cursor: default;
+}
