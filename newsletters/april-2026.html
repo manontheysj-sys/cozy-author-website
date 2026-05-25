@@ -4,8 +4,98 @@
     <title>April 2026 Newsletter</title>
     <link rel="stylesheet" href="../css/style.css">
 </head>
+<script>
+        const effectsContainer = document.querySelector(".season-effects");
+        const month = new Date().getMonth();
+
+        /* SPRING */
+        if (month >= 2 && month <= 4) {
+            for (let i = 0; i < 20; i++) {
+                const flower = document.createElement("div");
+                flower.classList.add("flower");
+                flower.innerHTML = "🌸";
+                flower.style.left = Math.random() * 100 + "vw";
+                flower.style.animationDuration = (5 + Math.random() * 5) + "s";
+                flower.style.fontSize = (16 + Math.random() * 18) + "px";
+                effectsContainer.appendChild(flower);
+            }
+        }
+
+        //* HALLOWEEN / AUTUMN */
+        if (month >= 8 && month <= 10) {
+            document.body.classList.add("autumn-theme");
+
+            for (let i = 0; i < 20; i++) {
+            const leaf = document.createElement("div");
+            leaf.classList.add("leaf");
+            leaf.innerHTML = "🍂";
+            leaf.style.left = Math.random() * 100 + "vw";
+            leaf.style.animationDuration = (6 + Math.random() * 5) + "s";
+            effectsContainer.appendChild(leaf);
+            }
+
+        /* Walking Cat */
+
+        setInterval(() => {
+            const cat = document.createElement("div");
+
+            cat.innerHTML = "🐈‍⬛";
+            cat.classList.add("walking-cat");
+
+            document.body.appendChild(cat);
+
+            setTimeout(() => {
+                cat.remove();
+            }, 12000);
+
+        }, 25000);
+    }
+
+        /* CHRISTMAS */
+        if (month === 11) {
+            document.body.classList.add("christmas-theme");
+
+            for (let i = 0; i < 40; i++) {
+                const snow = document.createElement("div");
+                snow.classList.add("snowflake");
+                snow.innerHTML = "❄";
+                snow.style.left = Math.random() * 100 + "vw";
+                snow.style.animationDuration = (5 + Math.random() * 5) + "s";
+                effectsContainer.appendChild(snow);
+            }
+
+            document.querySelector(".snow-ground").style.height = "60px";
+
+            setTimeout(() => {
+                const snowman = document.createElement("div");
+                snowman.innerHTML = "☃";
+                snowman.style.position = "fixed";
+                snowman.style.bottom = "10px";
+                snowman.style.right = "40px";
+                snowman.style.fontSize = "60px";
+
+                document.body.appendChild(snowman);
+            }, 4000);
+        }
+
+        /* VALENTINE */
+        if (month === 1) {
+            setInterval(() => {
+                const dove = document.createElement("div");
+                dove.classList.add("dove-heart");
+                dove.innerHTML = "🕊️💕🕊️";
+                document.body.appendChild(dove);
+
+            setTimeout(() => {
+                dove.remove();
+            }, 12000);
+        }, 15000);
+        }
+</script>
 
 <body>
+    <div class="season-effects"></div>
+    <div class="snow-ground"></div>
     <header>
             <nav>
                 <a href="../about.html">About</a>
@@ -28,26 +118,26 @@
 
             <p>My dear reader,
                 
-                April arrived softly, wrapped in rain, books, and inspiration.
+                <p>April arrived softly, wrapped in rain, books, and inspiration.</p>
 
-                This month, I treated myself to a visit to the hairdresser and, naturally, to two new books joining my ever-growing library: Yesteryear and Atmosphere. Atmosphere had been on my wishlist for quite some time, while Yesteryear is already being whispered about as one of the standout books of the season — and naturally, I could not resist.
+                <p>This month, I treated myself to a visit to the hairdresser and, naturally, to two new books joining my ever-growing library: Yesteryear and Atmosphere. Atmosphere had been on my wishlist for quite some time, while Yesteryear is already being whispered about as one of the standout books of the season — and naturally, I could not resist.</p>
 
-                I also immersed myself in the haunting world of Les Mystère d'Eversand La Suivante by Victor Dixen, the opening installment in a captivating four-book series. The story follows Birdie Baker, a young woman who leaves behind her life in Colombia to become a French maid within the enigmatic Rosemore family estate. Yet Eversand is far from what she imagined: behind every corridor lingers mystery, tension, and secrets waiting to surface.
+                <p>I also immersed myself in the haunting world of Les Mystère d'Eversand La Suivante by Victor Dixen, the opening installment in a captivating four-book series. The story follows Birdie Baker, a young woman who leaves behind her life in Colombia to become a French maid within the enigmatic Rosemore family estate. Yet Eversand is far from what she imagined: behind every corridor lingers mystery, tension, and secrets waiting to surface.</p>
 
-                The atmosphere of the novel utterly consumed me, and I quickly continued through the series during May. There is something deeply addictive about stories layered with intrigue, hidden histories, and unsettling elegance.
+                <p>The atmosphere of the novel utterly consumed me, and I quickly continued through the series during May. There is something deeply addictive about stories layered with intrigue, hidden histories, and unsettling elegance.</p>
 
-                As spring unfolded, I also continued developing my own projects and exploring the stories that continue to call me back to mythology, history, and emotionally charged worlds.
+                <p>As spring unfolded, I also continued developing my own projects and exploring the stories that continue to call me back to mythology, history, and emotionally charged worlds.</p>
                 
-                Yours, from a desk not far from the sea!
+                <p>Yours, from a desk not far from the sea!</p>
                 
-                Manon</p>
+                <p>Manon</p></p>
 
             <p>May 2026 - Coming Soon</p>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2026 My Coastal Writing Corner</p>
+        <p>&copy; 2026 Manon Theys</p>
     </footer>
 
 </body>
