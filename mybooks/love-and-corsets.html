@@ -4,8 +4,98 @@
         <title>Love and Corsets</title>
          <link rel="stylesheet" href="../css/style.css">
     </head>
+    <script>
+        const effectsContainer = document.querySelector(".season-effects");
+        const month = new Date().getMonth();
+
+        /* SPRING */
+        if (month >= 2 && month <= 4) {
+            for (let i = 0; i < 20; i++) {
+                const flower = document.createElement("div");
+                flower.classList.add("flower");
+                flower.innerHTML = "🌸";
+                flower.style.left = Math.random() * 100 + "vw";
+                flower.style.animationDuration = (5 + Math.random() * 5) + "s";
+                flower.style.fontSize = (16 + Math.random() * 18) + "px";
+                effectsContainer.appendChild(flower);
+            }
+        }
+
+        //* HALLOWEEN / AUTUMN */
+        if (month >= 8 && month <= 10) {
+            document.body.classList.add("autumn-theme");
+
+            for (let i = 0; i < 20; i++) {
+            const leaf = document.createElement("div");
+            leaf.classList.add("leaf");
+            leaf.innerHTML = "🍂";
+            leaf.style.left = Math.random() * 100 + "vw";
+            leaf.style.animationDuration = (6 + Math.random() * 5) + "s";
+            effectsContainer.appendChild(leaf);
+            }
+
+        /* Walking Cat */
+
+        setInterval(() => {
+            const cat = document.createElement("div");
+
+            cat.innerHTML = "🐈‍⬛";
+            cat.classList.add("walking-cat");
+
+            document.body.appendChild(cat);
+
+            setTimeout(() => {
+                cat.remove();
+            }, 12000);
+
+        }, 25000);
+    }
+
+        /* CHRISTMAS */
+        if (month === 11) {
+            document.body.classList.add("christmas-theme");
+
+            for (let i = 0; i < 40; i++) {
+                const snow = document.createElement("div");
+                snow.classList.add("snowflake");
+                snow.innerHTML = "❄";
+                snow.style.left = Math.random() * 100 + "vw";
+                snow.style.animationDuration = (5 + Math.random() * 5) + "s";
+                effectsContainer.appendChild(snow);
+            }
+
+            document.querySelector(".snow-ground").style.height = "60px";
+
+            setTimeout(() => {
+                const snowman = document.createElement("div");
+                snowman.innerHTML = "☃";
+                snowman.style.position = "fixed";
+                snowman.style.bottom = "10px";
+                snowman.style.right = "40px";
+                snowman.style.fontSize = "60px";
+
+                document.body.appendChild(snowman);
+            }, 4000);
+        }
+
+        /* VALENTINE */
+        if (month === 1) {
+            setInterval(() => {
+                const dove = document.createElement("div");
+                dove.classList.add("dove-heart");
+                dove.innerHTML = "🕊️💕🕊️";
+                document.body.appendChild(dove);
+
+            setTimeout(() => {
+                dove.remove();
+            }, 12000);
+        }, 15000);
+        }
+</script>
 
     <body>
+        <div class="season-effects"></div>
+        <div class="snow-ground"></div>
         <header>
             <nav>
                 <a href="../about.html">About</a>
@@ -28,13 +118,13 @@
 
                 <h2>Blurb</h2>
 
-                <p>Versailles has always been marvelled at, with its gilded corridors and luscious gardens, it has been home to the last remaining Kings. But do not mistake its beauty, for underneath the golden layers is a den of vipers ready to tear you down and judge every single move. 
+                    <p>Versailles has always been marvelled at, with its gilded corridors and luscious gardens, it has been home to the last remaining Kings. But do not mistake its beauty, for underneath the golden layers is a den of vipers ready to tear you down and judge every single move.</p> 
                     
-                    Hélène has been judged all her life; being the daughter of Madame de Pompadour is no easy feat. A legacy she must uphold and a reputation she must overcome, she is thrown into the den by one simple act: a wedding. 
+                    <p>Helene has been judged all her life; being the daughter of Madame de Pompadour is no easy feat. A legacy she must uphold and a reputation she must overcome, she is thrown into the den by one simple act: a wedding.</p>
                     
-                    As Hélène navigates both her legacy and the court's sneers, she is soon faced with another challenge. The King has changed the line of succession.
+                    <p>As Helene navigates both her legacy and the court's sneers, she is soon faced with another challenge. The King has changed the line of succession.</p>
                     
-                    Will Hélène manage to dream and create the life she always wanted, or will she crumble under the court's gaze? </p>
+                    <p>Will Helene manage to dream and create the life she always wanted, or will she crumble under the court's gaze?</p>
                 
 
                 <h3>Release Date</h3>
