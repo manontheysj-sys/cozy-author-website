@@ -2,11 +2,103 @@
 <html>
 
 <head>
-    <title>Coastal Author Website</title>
+    <title>Manon Theys - Coastal Author Website</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 
+<script>
+        const effectsContainer = document.querySelector(".season-effects");
+        const month = new Date().getMonth();
+
+        /* SPRING */
+        if (month >= 2 && month <= 4) {
+            for (let i = 0; i < 20; i++) {
+                const flower = document.createElement("div");
+                flower.classList.add("flower");
+                flower.innerHTML = "🌸";
+                flower.style.left = Math.random() * 100 + "vw";
+                flower.style.animationDuration = (5 + Math.random() * 5) + "s";
+                flower.style.fontSize = (16 + Math.random() * 18) + "px";
+                effectsContainer.appendChild(flower);
+            }
+        }
+
+        //* HALLOWEEN / AUTUMN */
+        if (month >= 8 && month <= 10) {
+            document.body.classList.add("autumn-theme");
+
+            for (let i = 0; i < 20; i++) {
+            const leaf = document.createElement("div");
+            leaf.classList.add("leaf");
+            leaf.innerHTML = "🍂";
+            leaf.style.left = Math.random() * 100 + "vw";
+            leaf.style.animationDuration = (6 + Math.random() * 5) + "s";
+            effectsContainer.appendChild(leaf);
+            }
+
+        /* Walking Cat */
+
+        setInterval(() => {
+            const cat = document.createElement("div");
+
+            cat.innerHTML = "🐈‍⬛";
+            cat.classList.add("walking-cat");
+
+            document.body.appendChild(cat);
+
+            setTimeout(() => {
+                cat.remove();
+            }, 12000);
+
+        }, 25000);
+    }
+
+        /* CHRISTMAS */
+        if (month === 11) {
+            document.body.classList.add("christmas-theme");
+
+            for (let i = 0; i < 40; i++) {
+                const snow = document.createElement("div");
+                snow.classList.add("snowflake");
+                snow.innerHTML = "❄";
+                snow.style.left = Math.random() * 100 + "vw";
+                snow.style.animationDuration = (5 + Math.random() * 5) + "s";
+                effectsContainer.appendChild(snow);
+            }
+
+            document.querySelector(".snow-ground").style.height = "60px";
+
+            setTimeout(() => {
+                const snowman = document.createElement("div");
+                snowman.innerHTML = "☃";
+                snowman.style.position = "fixed";
+                snowman.style.bottom = "10px";
+                snowman.style.right = "40px";
+                snowman.style.fontSize = "60px";
+
+                document.body.appendChild(snowman);
+            }, 4000);
+        }
+
+        /* VALENTINE */
+        if (month === 1) {
+            setInterval(() => {
+                const dove = document.createElement("div");
+                dove.classList.add("dove-heart");
+                dove.innerHTML = "🕊️💕🕊️";
+                document.body.appendChild(dove);
+
+            setTimeout(() => {
+                dove.remove();
+            }, 12000);
+        }, 15000);
+        }
+</script>
+
+
 <body>
+    <div class="season-effects"></div>
+    <div class="snow-ground"></div>
     <header>
         <nav>
             <a href="about.html">About</a>
@@ -21,7 +113,11 @@
     <section class="hero">
         <h1>Stories, Systems & Seaside Inspiration</h1>
 
-        <p>A quiet corner of the internet where literature, writing, and thoughtful digital tools come together.</p>
+        <p>I write historical and mythological fiction infused with romance, intrigue, and epic storytelling. Inspired by ancient legends, forgotten histories, and emotionally complex characters, my work explores the delicate line between destiny and desire.</p>
+
+        <p>An avid reader of historical fiction and mythology, I am particularly drawn to stories of powerful women, fractured loyalties, and worlds where love and legacy collide. When not writing, I can usually be found buried in books, researching ancient civilizations, or obsessing over fictional characters far too intensely.</p>
+
+        <p>I am also fueled almost exclusively by caramel lattes — except in autumn, when all loyalties shift firmly toward pumpkin spice..</p>
 
         <a class="btn" href="about.html">Meet the Author</a>
         <a class="btn-outline" href="newsletter.html">Join the Newsletter</a>
@@ -37,9 +133,9 @@
         <h2>Current Writing Project</h2>
 
         <div class="book-card">
-            <img src="images/images/love-and-corsets,jpg">
+            <img src="images/love-and-corsets.jpg">
 
-            <h3>My First Novel</h3>
+            <h3>Love and Corsets</h3>
 
             <p>A story exploring love, ambition and the delicate balance of power.</p>
 
@@ -66,7 +162,7 @@
     </section>
 
     <footer>
-        <p>&copy; 2026 Manon J. Theys</p>
+        <p>&copy; 2026 Manon Theys</p>
     </footer>
 </body>
 </html>
