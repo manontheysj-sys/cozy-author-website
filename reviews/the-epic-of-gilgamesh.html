@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>The Epic of Gilgamesh</title>
+        <link rel="stylesheet" href="../css/style.css">
+    </head>
+
+    <script>
+        const effectsContainer = document.querySelector(".season-effects");
+        const month = new Date().getMonth();
+
+        /* SPRING */
+        if (month >= 2 && month <= 4) {
+            for (let i = 0; i < 20; i++) {
+                const flower = document.createElement("div");
+                flower.classList.add("flower");
+                flower.innerHTML = "🌸";
+                flower.style.left = Math.random() * 100 + "vw";
+                flower.style.animationDuration = (5 + Math.random() * 5) + "s";
+                flower.style.fontSize = (16 + Math.random() * 18) + "px";
+                effectsContainer.appendChild(flower);
+            }
+        }
+
+        //* HALLOWEEN / AUTUMN */
+        if (month >= 8 && month <= 10) {
+            document.body.classList.add("autumn-theme");
+
+            for (let i = 0; i < 20; i++) {
+            const leaf = document.createElement("div");
+            leaf.classList.add("leaf");
+            leaf.innerHTML = "🍂";
+            leaf.style.left = Math.random() * 100 + "vw";
+            leaf.style.animationDuration = (6 + Math.random() * 5) + "s";
+            effectsContainer.appendChild(leaf);
+            }
+
+        /* Walking Cat */
+
+        setInterval(() => {
+            const cat = document.createElement("div");
+
+            cat.innerHTML = "🐈‍⬛";
+            cat.classList.add("walking-cat");
+
+            document.body.appendChild(cat);
+
+            setTimeout(() => {
+                cat.remove();
+            }, 12000);
+
+        }, 25000);
+    }
+
+        /* CHRISTMAS */
+        if (month === 11) {
+            document.body.classList.add("christmas-theme");
+
+            for (let i = 0; i < 40; i++) {
+                const snow = document.createElement("div");
+                snow.classList.add("snowflake");
+                snow.innerHTML = "❄";
+                snow.style.left = Math.random() * 100 + "vw";
+                snow.style.animationDuration = (5 + Math.random() * 5) + "s";
+                effectsContainer.appendChild(snow);
+            }
+
+            document.querySelector(".snow-ground").style.height = "60px";
+
+            setTimeout(() => {
+                const snowman = document.createElement("div");
+                snowman.innerHTML = "☃";
+                snowman.style.position = "fixed";
+                snowman.style.bottom = "10px";
+                snowman.style.right = "40px";
+                snowman.style.fontSize = "60px";
+
+                document.body.appendChild(snowman);
+            }, 4000);
+        }
+
+        /* VALENTINE */
+        if (month === 1) {
+            setInterval(() => {
+                const dove = document.createElement("div");
+                dove.classList.add("dove-heart");
+                dove.innerHTML = "🕊️💕🕊️";
+                document.body.appendChild(dove);
+
+            setTimeout(() => {
+                dove.remove();
+            }, 12000);
+        }, 15000);
+        }
+    </script>
+
+
+    <body>
+        <div class="season-effects"></div>
+        <div class="snow-ground"></div>
+        <header>
+            <nav>
+                <a href="../about.html">About</a>
+                <a href="../books.html">Books</a>
+                <a href="../reading-journal.html">Reading Journal</a>
+                <a href="../newsletter.html">Newsletter</a>
+                <a href="../services.html">Services</a>
+                <a href="../contact.html">Contact</a>
+            </nav>
+        </header>
+        
+        <header>
+            <h1>The Epic of Gilgamesh</h1>
+
+        </header>
+
+        <main>
+            <section>
+                <img src="../images/images/the-epic-of-gilgamesh.jpg" width="150">
+
+                <h2>My Thoughts</h2>
+
+                <p>There are stories you read, and there are stories that consume you entirely.</p>
+                <h3>Rating</h3>
+                <p>5 stars</p>
+
+                <h3>Reflection</h3>
+                <p>The Epic of Gilgamesh is shaping itself into a deeply atmospheric reimagining of one of humanity’s oldest legends, weaving mythology, ritual, divine interference, mortality, and raw emotional intensity into something that feels both ancient and startlingly intimate.
+
+                What makes this project particularly compelling is its understanding of grandeur. The world does not merely exist as a backdrop — it breathes through bronze-age politics, sacred rites, gods who are terrifyingly present, and characters burdened by destiny rather than simple morality. The narrative leans fully into themes of fate, power, legacy, grief, and the terrifying beauty of being remembered.
+
+                There is also a remarkable emotional undercurrent beneath the mythology. Beneath the scale of kingdoms and divine wrath lies a profoundly human story about longing, identity, and what it means to leave a mark upon the world.
+
+                Fans of mythological retellings, epic historical fantasy, and richly layered emotional storytelling will find themselves utterly enthralled.
+
+                This is not simply a retelling.
+
+                It is an invocation.</p>
+
+
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2026 Manon Theys</p>
+         </footer>
+    </body>
+</html>
