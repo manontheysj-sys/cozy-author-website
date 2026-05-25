@@ -8,9 +8,101 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 
+<script>
+        const effectsContainer = document.querySelector(".season-effects");
+        const month = new Date().getMonth();
+
+        /* SPRING */
+        if (month >= 2 && month <= 4) {
+            for (let i = 0; i < 20; i++) {
+                const flower = document.createElement("div");
+                flower.classList.add("flower");
+                flower.innerHTML = "🌸";
+                flower.style.left = Math.random() * 100 + "vw";
+                flower.style.animationDuration = (5 + Math.random() * 5) + "s";
+                flower.style.fontSize = (16 + Math.random() * 18) + "px";
+                effectsContainer.appendChild(flower);
+            }
+        }
+
+        //* HALLOWEEN / AUTUMN */
+        if (month >= 8 && month <= 10) {
+            document.body.classList.add("autumn-theme");
+
+            for (let i = 0; i < 20; i++) {
+            const leaf = document.createElement("div");
+            leaf.classList.add("leaf");
+            leaf.innerHTML = "🍂";
+            leaf.style.left = Math.random() * 100 + "vw";
+            leaf.style.animationDuration = (6 + Math.random() * 5) + "s";
+            effectsContainer.appendChild(leaf);
+            }
+
+        /* Walking Cat */
+
+        setInterval(() => {
+            const cat = document.createElement("div");
+
+            cat.innerHTML = "🐈‍⬛";
+            cat.classList.add("walking-cat");
+
+            document.body.appendChild(cat);
+
+            setTimeout(() => {
+                cat.remove();
+            }, 12000);
+
+        }, 25000);
+    }
+
+        /* CHRISTMAS */
+        if (month === 11) {
+            document.body.classList.add("christmas-theme");
+
+            for (let i = 0; i < 40; i++) {
+                const snow = document.createElement("div");
+                snow.classList.add("snowflake");
+                snow.innerHTML = "❄";
+                snow.style.left = Math.random() * 100 + "vw";
+                snow.style.animationDuration = (5 + Math.random() * 5) + "s";
+                effectsContainer.appendChild(snow);
+            }
+
+            document.querySelector(".snow-ground").style.height = "60px";
+
+            setTimeout(() => {
+                const snowman = document.createElement("div");
+                snowman.innerHTML = "☃";
+                snowman.style.position = "fixed";
+                snowman.style.bottom = "10px";
+                snowman.style.right = "40px";
+                snowman.style.fontSize = "60px";
+
+                document.body.appendChild(snowman);
+            }, 4000);
+        }
+
+        /* VALENTINE */
+        if (month === 1) {
+            setInterval(() => {
+                const dove = document.createElement("div");
+                dove.classList.add("dove-heart");
+                dove.innerHTML = "🕊️💕🕊️";
+                document.body.appendChild(dove);
+
+            setTimeout(() => {
+                dove.remove();
+            }, 12000);
+        }, 15000);
+        }
+</script>
+
+
 <body>
+    <div class="season-effects"></div>
+    <div class="snow-ground"></div>
     <header>
-        <h1>My Coastal Writing Corner</h1>
+        <h1>Manon Theys Author</h1>
         <nav>
             <a href="index.html">Home</a>
             <a href="about.html">About</a>
@@ -44,7 +136,7 @@
     </main>
 
     <footer>
-        <p>&copy; 2026 Manon J. Theys</p>
+        <p>&copy; 2026 Manon Theys</p>
     </footer>
 </body>
 </html>
