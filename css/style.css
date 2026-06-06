@@ -1,46 +1,137 @@
-/* General Page Style */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Great+Vibes&display=swap');
 
-body {
-    font-family: "Gerogia", serif;
-    background-color: #f7faf9;
-    color: #2c3e40;
-    margin: 0;
-    line-height: 1.6;
+/* ROOT PALETTE (NEW GOTHIC CORE) */
+
+:root {
+    --bg: var(--deep-black);
+    --panel: var(--smoke);
+    --text: var(--cream);
+    --muted: var(--aged-cream);
+
+    --accent: var(--gold);
+    --accent-2: var(--wine);
+    --border: var(--wood);
+
+    --black: #0B0A0A;
+    --deep-black: #050404;
+
+    --smoke: #1C1A1A;
+    --ash: #2A2727;
+
+    --cream: #E6D8C3;
+    --aged-cream: #CDB58E;
+
+    --gold: #B08D57;
+    --old-gold: #8C6A3D;
+
+    --wine: #5B1F2A;
+    --deep-wine: #3B0F18;
+
+    --wood: #603A2A;
 }
 
-/* Hero */
+/* 🏛️ BABYLONIA THEME */
+body[data-theme="babylonia"] {
+    --bg: #2A1B15;
+    --panel: #3A2A22;
+    --text: #F0E2C8;
+    --muted: #D6C09A;
+    --accent: #C8A45D;
+    --accent-2: #8C6A3D;
+    --border: #A1734A;
+}
+
+/* GOTHIC THEME */
+body[data-theme="gothic"] {
+    --bg: var(--deep-black);
+    --panel: var(--smoke);
+    --text: var(--cream);
+    --muted: var(--aged-cream);
+
+    --accent: var(--gold);
+    --accent-2: var(--wine);
+    --border: var(--wood);
+}
+/* GENERAL PAGE STYLE */
+
+body {
+    font-family: "Cormorant Garamond", serif;
+    background-color: var(--bg);
+    color: var(--text);
+    margin: 0;
+    line-height: 1.8;
+
+    background-image: radial-gradient(
+        circle at top,
+        var(--panel),
+        var(--bg)
+    );
+}
+
+/* ✒️ headings = handwritten elegance accent */
+h1, h2, h3 {
+    font-family: "Great Vibes", cursive;
+    font-weight: 400;
+    color: var(--accent);
+}
+
+/* 📜 keep text readable & literary */
+p {
+    font-size: 17px;
+}
+
+/* HERO */
+
 .hero {
     text-align: center;
-    padding: 60px 20px;
-    background: #f2f7f6;
+    padding: 80px 20px;
+
+    background: linear-gradient(
+        to bottom,
+        var(--panel),
+        var(--bg)
+    );
+
+    border-bottom: 1px solid var(--border);
 }
 
 .hero h1 {
     font-size: 42px;
-    margin-bottom: 200px;
+    color: var(--accent);
+    margin-bottom: 20px;
 }
 
 .hero p {
     font-size: 18px;
-    max-width: 600px;
+    max-width: 700px;
     margin: auto;
     margin-bottom: 30px;
+    color: var(--text);
+    opacity: 0.9;
 }
 
-/* Header */
+/* HEADER */
 
 header {
     text-align: center;
     padding: 50px 20px;
-    background-color: #E8E1D8;
+
+    background: linear-gradient(
+        to bottom,
+        var(--panel),
+        var(--bg)
+    );
+
+    border-bottom: 1px solid var(--border);
 }
 
 header h1 {
     font-size: 42px;
     margin-bottom: 10px;
+    color: var(--accent);
 }
 
-/* Navigation */
+/* NAVIGATION */
 
 nav {
     margin-top: 10px;
@@ -49,31 +140,52 @@ nav {
 nav a {
     margin: 0 15px;
     text-decoration: none;
-    color: #6f6257;
+    color: var(--muted);
     font-weight: bold;
+    transition: 0.2s ease;
 }
 
 nav a:hover {
-    color: #A7C7C1;
+    color: var(--accent-2);
 }
 
-/* Main Layout*/
+/* MAIN LAYOUT */
 
 main {
-    max-width: 900px;
+    max-width: 1000px;
     margin: auto;
     padding: 40px 20px;
 }
 
-/* Sections */
+/* SECTIONS */
 
-section{
+section {
     max-width: 1000px;
     margin: auto;
     padding: 60px 20px;
 }
 
-/* Form Styling */
+/* AUTHOR IMAGE SECTION */
+
+.author-section {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.author-photo {
+    width: 280px;
+    border-radius: 12px;
+    border: 3px solid var(--accent);
+
+    box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+}
+
+.author-text {
+    flex: 1;
+}
+
+/* FORM STYLING */
 
 form {
     display: flex;
@@ -83,58 +195,83 @@ form {
     margin: auto;
 }
 
-/* Inputs */
+/* INPUTS */
 
-input, textarea {
+input,
+textarea {
     padding: 12px;
     border-radius: 6px;
-    border: 1px solid #DDD;
+
+    border: 1px solid var(--border);
+
+    background: var(--panel);
+    color: var(--text);
+
     font-size: 14px;
 }
 
-/* Buttons */
+/* BUTTONS */
 
 button {
     padding: 12px;
-    border: none;
-    background-color: #A7C7C1;
-    color: white;
+    border: 1px solid var(--border);
+
+    background-color: var(--accent-2);
+    color: var(--text);
+
     font-size: 15px;
     border-radius: 6px;
     cursor: pointer;
+
+    transition: 0.3s ease;
 }
 
 button:hover {
-    background-color: #8EB5AF;
+    background-color: var(--accent);
 }
 
-/* Footer */
+/* FOOTER */
+
 footer {
     text-align: center;
     padding: 20px;
-    background-color: #E8E1D8;
+
+    background-color: var(--bg);
+    color: var(--muted);
+
+    border-top: 1px solid var(--border);
+
+    opacity: 0.9;
 }
 
-/* Book Grid Digital Bookshelf */
+/* BOOK GRID */
+
 .books-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220 px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 30px;
     margin-top: 30px;
 }
 
+/* BOOK CARD */
+
 .book-card {
-    background: #ffffff;
+    background: var(--panel);
+    border: 1px solid var(--border);
+
     padding: 18px;
     border-radius: 14px;
-    box-shadow: 0 8px 18px rgba(0,0,0,0.06);
+
+    box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+
     text-align: center;
-    transition: transform 0.2s ease, box-shadow 0.2 ease;
+
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 .book-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 12px 24px rgba(0,0,0,0.1);
+    transform: translateY(-6px);
+    box-shadow: 0 16px 40px rgba(0,0,0,0.75);
 }
 
 .book-card img {
@@ -146,19 +283,27 @@ footer {
 .book-card h3 {
     margin: 10px 0 6px;
     font-size: 18px;
+    color: var(--accent);
 }
 
 .book-card p {
     font-size: 14px;
-    color: #6a7a7c
+    color: var(--text);
+    opacity: 0.9;
 }
 
 .book-card a {
     font-weight: 600;
     letter-spacing: 0.3px;
+    color: var(--muted);
 }
 
-/* Services Cards */
+.book-card a:hover {
+    color: var(--accent);
+}
+
+/* SERVICES CARDS */
+
 .services-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -167,83 +312,86 @@ footer {
 }
 
 .service-card {
-    background: white;
+    background: linear-gradient(to bottom, var(--panel), var(--bg));
     padding: 25px;
     border-radius: 12px;
-    box-shadow: 0 4px 12pc rgba(0, 0, 0, 0. 08);
-    transition: transform 0.2s;
+    border: 1px solid var(--border);
+
+    box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+
+    transition: transform 0.2s ease;
 }
 
 .service-card:hover {
     transform: translateY(-4px);
 }
 
-/* Journal Styling */
+/* JOURNAL STYLING */
+
 .journal-entry {
-    background: white;
+    background: linear-gradient(to bottom, var(--panel), var(--bg));
     padding: 20px;
     margin-bottom: 20px;
     border-radius: 10px;
-    box-shadow: 0 3px 8px rgba(0, 0, 0, 0. 08);
+    border: 1px solid var(--border);
+
+    box-shadow: 0 3px 10px rgba(0,0,0,0.4);
 }
 
-/* Newsletter Archive Styling */
+/* NEWSLETTER */
+
 .newsletter-list {
     list-style: none;
     padding: 0;
 }
 
-.newsletter-list li{
+.newsletter-list li {
     margin-bottom: 10px;
 }
 
-.newsletter-list a{
+.newsletter-list a {
     text-decoration: none;
-    color: #6f6257;
+    color: var(--accent);
     font-weight: bold;
 }
 
-.newsletter-list a:hover{
-    color: #A7C7C1;
+.newsletter-list a:hover {
+    color: var(--accent-2);
 }
 
-/* Remove default blue Links */
+/* LINKS */
+
 a {
-    color: #4a6a73;
+    color: var(--muted);
     text-decoration: none;
 }
 
 a:hover {
-    color: #2f4f57;
-    text-decoration: underline;
+    color: var(--accent);
 }
 
-/* Author */
-.author-phot {
-    width: 180px;
-    border-radius: 12px;
-    margin: 20px 0;
+/* AUTHOR IMAGE SMALL */
+
+.author-photo {
+    filter: contrast(1.05) saturate(0.9) brightness(0.95);
+
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
+.author-photo:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 18px 45px rgba(0,0,0,0.75);
+}
+
+/* BOOK SECTION HEADERS */
 
 .my-books h2 {
     margin-top: 50px;
     font-size: 28px;
-    color: #3a5a60;
+    color: var(--accent);
 }
 
-.my-books .book-card {
-    background: #ffffff;
-    padding: 18px;
-    border-radius: 14px;
-    box-shadow: 0 8px 18px rgba(0,0,0,0.06);
-    transition: transform 0.2s ease, box-shadow 0.2 ease;
-    text-align: center;
-}
-
-.my-books .book-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 12px 24px rgba(0,0,0,0.1);
-}
+/* BOOK BUTTONS */
 
 .book-links {
     display: flex;
@@ -255,31 +403,61 @@ a:hover {
 .book-button {
     display: inline-block;
     padding: 12px 20px;
-    background-color: #6e4b3a;
-    color: white;
-    text-decoration: none;
+
+    background-color: var(--accent-2);
+    color: var(--text);
+
     border-radius: 8px;
     width: fit-content;
+
     transition: 0.3s ease;
 }
 
 .book-button:hover {
-    background-color: #8a5d46;
+    background-color: var(--accent);
 }
 
 .book-button.secondary {
-    background-color: #9b7b68;
+    background-color: var(--border);
 }
 
 .book-button.disabled {
-    background-color: #c7b8ae;
+    background-color: #444;
     pointer-events: none;
     cursor: default;
 }
 
-/* =========================
-   Seasonal Effects
-========================= */
+/* LORE SYSTEM */
+
+.lore-hover {
+    position: relative;
+    display: inline-block;
+}
+
+.lore-text {
+    position: absolute;
+    bottom: 120%;
+    left: 50%;
+    transform: translateX(-50%);
+
+    background: var(--panel);
+    border: 1px solid var(--border);
+    padding: 6px 10px;
+
+    font-size: 12px;
+    white-space: nowrap;
+
+    opacity: 0;
+    pointer-events: none;
+
+    transition: 0.2s ease;
+}
+
+.lore-hover:hover .lore-text {
+    opacity: 1;
+}
+
+/* SEASONAL EFFECTS */
 
 .season-effects {
     position: fixed;
@@ -289,9 +467,8 @@ a:hover {
     z-index: 999;
 }
 
-/* Shared Floating Animation */
-
 @keyframes floatDown {
+
     0% {
         transform: translateY(-10vh) rotate(0deg);
         opacity: 0;
@@ -305,31 +482,34 @@ a:hover {
         transform: translateY(110vh) rotate(360deg);
         opacity: 0;
     }
+
 }
 
-/* SPRING FLOWERS */
+/* SPRING */
 
 .flower {
     position: absolute;
     font-size: 20px;
+    color: #CDB58E;
     animation: floatDown linear infinite;
     opacity: 0.8;
 }
 
-/* AUTUMN LEAVES */
+/* AUTUMN */
 
 .leaf {
     position: absolute;
     font-size: 22px;
+    color: #A05A2C;
     animation: floatDown linear infinite;
     opacity: 0.85;
 }
 
-/* CHRISTMAS SNOW */
+/* CHRISTMAS */
 
 .snowflake {
     position: absolute;
-    color: white;
+    color: #C8A45D;
     font-size: 18px;
     animation: floatDown linear infinite;
     opacity: 0.9;
@@ -341,7 +521,7 @@ a:hover {
     left: 0;
     width: 100%;
     height: 0;
-    background: white;
+    background: #CDB58E;
     transition: height 4s ease;
     z-index: 998;
     pointer-events: none;
@@ -354,11 +534,13 @@ a:hover {
     top: 20%;
     left: -200px;
     font-size: 28px;
+    color: #5B1F2A;
     animation: flyAcross 12s linear infinite;
     z-index: 1000;
 }
 
 @keyframes flyAcross {
+
     0% {
         transform: translateX(0);
         opacity: 0;
@@ -376,22 +558,23 @@ a:hover {
         transform: translateX(120vw);
         opacity: 0;
     }
+
 }
 
-/* Cozy Autumn Warmth */
+/* COZY AUTUMN */
 
 .autumn-theme {
-    background-color: #f6efe6;
-    color: #4a372d;
+    background-color: #2A1B15;
+    color: #CDB58E;
 }
 
-/* Christmas Glow */
+/* CHRISTMAS GLOW */
 
 .christmas-theme {
-    background-color: #f4f8fb;
+    background-color: #111B2F;
 }
 
-/* Halloween Cat */
+/* HALLOWEEN */
 
 .walking-cat {
     position: fixed;
@@ -403,6 +586,7 @@ a:hover {
 }
 
 @keyframes catWalk {
+
     0% {
         left: -100px;
     }
@@ -410,4 +594,21 @@ a:hover {
     100% {
         left: 110vw;
     }
+
 }
+
+/* MOBILE */
+
+@media (max-width: 768px) {
+
+    .author-section {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .author-photo {
+        width: 220px;
+    }
+
+}
+
