@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- IMPORTANT: adjust path for subfolder -->
+    <link rel="stylesheet" href="../css/style.css">
+
+    <title>Gothic Russian Fantasy — Book I</title>
+</head>
+
+<body>
+
+    <!-- 🌫️ EFFECT LAYERS -->
+    <div class="season-effects"></div>
+    <div class="snow-ground"></div>
+
+    <!-- 🧭 NAVIGATION -->
+    <header>
+        <nav>
+            <a href="../about.html">About</a>
+            <a href="../books.html">Books</a>
+            <a href="../reading-journal.html">Reading Journal</a>
+            <a href="../newsletter.html">Newsletter</a>
+            <a href="../services.html">Services</a>
+            <a href="../contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <!-- 🏰 TITLE -->
+    <header>
+        <h1>Gothic Russian Fantasy — Book I</h1>
+    </header>
+
+    <!-- 📜 MAIN CONTENT -->
+    <main>
+
+        <section>
+            <h2>Gothic Russian Fantasy — Book I</h2>
+            <p>Snow falls like judgment. The empire does not sleep — it listens.</p>
+        </section>
+
+        <section>
+            <h2>Synopsis</h2>
+
+            <p>
+                <!-- your full synopsis here -->
+            </p>
+
+            <p><em>Status: Concept / Draft</em></p>
+        </section>
+
+        <section>
+            <a href="../about.html">← Return to Archive</a>
+        </section>
+
+    </main>
+
+    <!-- 🧠 SAFE SEASON SYSTEM -->
+    <script>
+    (function () {
+
+        function initWorldSystem() {
+
+            console.log("World system initialised ✔");
+
+            /* =========================
+               🏛️ THEME SYSTEM
+            ========================== */
+
+            const path = window.location.pathname.toLowerCase();
+
+            if (document.body) {
+                if (path.includes("babylonia")) {
+                    document.body.setAttribute("data-theme", "babylonia");
+                } 
+                else if (path.includes("gothic")) {
+                    document.body.setAttribute("data-theme", "gothic");
+                }
+            }
+
+            /* =========================
+               🌸 SEASON SYSTEM
+            ========================== */
+
+            const month = new Date().getMonth();
+            const effectsContainer = document.querySelector(".season-effects");
+            const snowGround = document.querySelector(".snow-ground");
+
+            // STOP IF MISSING (prevents blank page)
+            if (!effectsContainer) return;
+
+            /* 🌸 SPRING */
+            if (month >= 2 && month <= 4) {
+                for (let i = 0; i < 20; i++) {
+                    const flower = document.createElement("div");
+                    flower.className = "flower";
+                    flower.innerHTML = "🌸";
+                    flower.style.left = Math.random() * 100 + "vw";
+                    flower.style.animationDuration = (5 + Math.random() * 5) + "s";
+                    effectsContainer.appendChild(flower);
+                }
+            }
+
+            /* 🍂 AUTUMN */
+            if (month >= 8 && month <= 10) {
+
+                document.body.classList.add("autumn-theme");
+
+                for (let i = 0; i < 20; i++) {
+                    const leaf = document.createElement("div");
+                    leaf.className = "leaf";
+                    leaf.innerHTML = "🍂";
+                    leaf.style.left = Math.random() * 100 + "vw";
+                    leaf.style.animationDuration = (6 + Math.random() * 5) + "s";
+                    effectsContainer.appendChild(leaf);
+                }
+
+                setInterval(() => {
+                    const cat = document.createElement("div");
+                    cat.className = "walking-cat";
+                    cat.innerHTML = "🐈‍⬛";
+                    document.body.appendChild(cat);
+
+                    setTimeout(() => cat.remove(), 12000);
+
+                }, 25000);
+            }
+
+            /* ❄️ WINTER */
+            if (month === 11) {
+
+                document.body.classList.add("christmas-theme");
+
+                for (let i = 0; i < 40; i++) {
+                    const snow = document.createElement("div");
+                    snow.className = "snowflake";
+                    snow.innerHTML = "❄";
+                    snow.style.left = Math.random() * 100 + "vw";
+                    snow.style.animationDuration = (5 + Math.random() * 5) + "s";
+                    effectsContainer.appendChild(snow);
+                }
+
+                if (snowGround) {
+                    snowGround.style.height = "60px";
+                }
+
+                setTimeout(() => {
+                    const snowman = document.createElement("div");
+                    snowman.innerHTML = "☃";
+                    snowman.style.position = "fixed";
+                    snowman.style.bottom = "10px";
+                    snowman.style.right = "40px";
+                    snowman.style.fontSize = "60px";
+                    document.body.appendChild(snowman);
+                }, 4000);
+            }
+
+            /* 💕 VALENTINE */
+            if (month === 1) {
+
+                setInterval(() => {
+                    const dove = document.createElement("div");
+                    dove.className = "dove-heart";
+                    dove.innerHTML = "🕊️💕🕊️";
+                    document.body.appendChild(dove);
+
+                    setTimeout(() => dove.remove(), 12000);
+
+                }, 15000);
+            }
+        }
+
+        if (document.readyState === "loading") {
+            document.addEventListener("DOMContentLoaded", initWorldSystem);
+        } else {
+            initWorldSystem();
+        }
+
+    })();
+    </script>
+
+    <!-- 🪶 FOOTER -->
+    <footer>
+        <p>&copy; 2026 Manon Theys</p>
+    </footer>
+
+</body>
+</html>
