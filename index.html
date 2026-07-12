@@ -1,178 +1,609 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-    <title>Manon Theys - Author Website</title>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salt & Paper Stories</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 
-<script>
-        const effectsContainer = document.querySelector(".season-effects");
-        const month = new Date().getMonth();
-
-        /* SPRING */
-        if (month >= 2 && month <= 4) {
-            for (let i = 0; i < 20; i++) {
-                const flower = document.createElement("div");
-                flower.classList.add("flower");
-                flower.innerHTML = "🌸";
-                flower.style.left = Math.random() * 100 + "vw";
-                flower.style.animationDuration = (5 + Math.random() * 5) + "s";
-                flower.style.fontSize = (16 + Math.random() * 18) + "px";
-                effectsContainer.appendChild(flower);
-            }
-        }
-
-        //* HALLOWEEN / AUTUMN */
-        if (month >= 8 && month <= 10) {
-            document.body.classList.add("autumn-theme");
-
-            for (let i = 0; i < 20; i++) {
-            const leaf = document.createElement("div");
-            leaf.classList.add("leaf");
-            leaf.innerHTML = "🍂";
-            leaf.style.left = Math.random() * 100 + "vw";
-            leaf.style.animationDuration = (6 + Math.random() * 5) + "s";
-            effectsContainer.appendChild(leaf);
-            }
-
-        /* Walking Cat */
-
-        setInterval(() => {
-            const cat = document.createElement("div");
-
-            cat.innerHTML = "🐈‍⬛";
-            cat.classList.add("walking-cat");
-
-            document.body.appendChild(cat);
-
-            setTimeout(() => {
-                cat.remove();
-            }, 12000);
-
-        }, 25000);
-    }
-
-        /* CHRISTMAS */
-        if (month === 11) {
-            document.body.classList.add("christmas-theme");
-
-            for (let i = 0; i < 40; i++) {
-                const snow = document.createElement("div");
-                snow.classList.add("snowflake");
-                snow.innerHTML = "❄";
-                snow.style.left = Math.random() * 100 + "vw";
-                snow.style.animationDuration = (5 + Math.random() * 5) + "s";
-                effectsContainer.appendChild(snow);
-            }
-
-            document.querySelector(".snow-ground").style.height = "60px";
-
-            setTimeout(() => {
-                const snowman = document.createElement("div");
-                snowman.innerHTML = "☃";
-                snowman.style.position = "fixed";
-                snowman.style.bottom = "10px";
-                snowman.style.right = "40px";
-                snowman.style.fontSize = "60px";
-
-                document.body.appendChild(snowman);
-            }, 4000);
-        }
-
-        /* VALENTINE */
-        if (month === 1) {
-            setInterval(() => {
-                const dove = document.createElement("div");
-                dove.classList.add("dove-heart");
-                dove.innerHTML = "🕊️💕🕊️";
-                document.body.appendChild(dove);
-
-            setTimeout(() => {
-                dove.remove();
-            }, 12000);
-        }, 15000);
-        }
-</script>
-
-
-<body>
-    <div class="season-effects"></div>
-    <div class="snow-ground"></div>
+<body data-theme="newspaper">
+    <div class="paper-page">
     <header>
-        <nav>
-            <a href="about.html">About</a>
-            <a href="books.html">Books</a>
-            <a href="reading-journal.html">Reading Journal</a>
-            <a href="newsletter.html">Newsletter</a>
-            <a href="services.html">Services</a>
-            <a href="contact.html">Contact</a>
-        </nav>
-    </header>
-    
-    <section class="hero">
-        <h1>Stories, Systems & Mythological Inspiration</h1>
+        <h1>
+            Salt & Paper Stories
+        </h1>
 
-        <section class="about-author author-section">
+        <p>
+            Literature • History • Mythology • Storytelling
+        </p>
 
-            <img 
-                src="images/images/manon-theys-author.jpg" 
-                alt="Author portrait" 
-                class="author-photo"
-            >
 
-            <div class="author-text">
+    <nav>
 
-        <p>I write historical and mythological fiction infused with romance, intrigue, and epic storytelling. Inspired by ancient legends, forgotten histories, and emotionally complex characters, my work explores the delicate line between destiny and desire.</p>
+        <a href="index.html">
+            Home
+        </a>
 
-        <p>An avid reader of historical fiction and mythology, I am particularly drawn to stories of powerful women, fractured loyalties, and worlds where love and legacy collide. When not writing, I can usually be found buried in books, researching ancient civilizations, or obsessing over fictional characters far too intensely.</p>
+        <a href="about.html">
+            About
+        </a>
 
-        <p>I am also fueled almost exclusively by caramel lattes; except in autumn, when all loyalties shift firmly toward pumpkin spice..</p>
+        <a href="mybooks.html">
+            Books
+        </a>
 
-        <a class="btn" href="about.html">Meet the Author</a>
-        <a class="btn-outline" href="newsletter.html">Join the Newsletter</a>
-    </section>
+        <a href="journal.html">
+            Journal
+        </a>
 
-    <section class="intro">
-        <h2>Welcome</h2>
+        <a href="newsletter.html">
+            Newsletter
+        </a>
 
-        <p>This space is where I explore literature, document my reading journey, and share updates on my own writing projects.</p>
-    </section>
+    </nav>
 
-    <section class="home-author">
-        <h2>Published Projects</h2>
 
-        <div class="book-card">
-            <img src="images/love-and-corsets.jpg">
+</header>
 
-            <h3>Love and Corsets</h3>
 
-            <p>A story exploring love, ambition and the delicate balance of power.</p>
 
-            <a href="about.html">Learn more</a>
-        </div>
+<main>
 
-    </section>
 
-    <section class="home-services">
-        <h2>Automation for Indie Authors and Small Businesses</h2>
 
-        <p>I build simple automation tools for indie authors and small creators.</p>
+<!-- =====================================
+     FRONT PAGE FEATURE
+===================================== -->
 
-        <a class="btn" href="services.html">View Services</a>
 
-    </section>
+<section class="front-page">
 
-    <section class="newsletter-cta">
-        <h2>Join the Newsletter</h2>
 
-        <p>Receive monthly updates about books, writing, and projects.</p>
+<article class="front-feature">
 
-        <a class="btn" href="newsletter.html">Subscribe</a>
-    </section>
 
-    <footer>
-        <p>&copy; 2026 Manon Theys</p>
-    </footer>
+<span class="story-label">
+Featured Story
+</span>
+
+
+<h1>
+Stories, Systems & Mythological Inspiration
+</h1>
+
+
+<p>
+Welcome to Salt & Paper Stories — a literary archive
+where historical fiction, mythology, books and
+storytelling meet.
+</p>
+
+
+<p>
+Explore forgotten civilizations, fictional worlds,
+character studies and the stories that inspire my writing.
+</p>
+
+
+<a class="btn" href="about.html">
+Enter the Archive
+</a>
+
+
+</article>
+
+
+
+<aside class="front-sidebar">
+
+
+<article>
+
+<h3>
+Latest Manuscript
+</h3>
+
+
+<p>
+<strong>
+Threads of Babylonia
+</strong>
+</p>
+
+
+<p>
+Through Time and Tyranny —
+a mythological retelling inspired by
+ancient Mesopotamia.
+</p>
+
+
+</article>
+
+
+
+<article>
+
+<h3>
+Writer's Desk
+</h3>
+
+
+<p>
+Research notes, writing updates,
+and behind-the-scenes discoveries.
+</p>
+
+
+</article>
+
+
+
+</aside>
+
+
+</section>
+
+
+
+
+
+<!-- =====================================
+     WEEKLY GAZETTE
+===================================== -->
+
+
+<section class="gazette-section">
+
+
+<h2>
+The Weekly Gazette
+</h2>
+
+
+<div class="gazette-grid">
+
+
+
+<article class="gazette-card">
+
+<h3>
+🎬 The Silver Screen
+</h3>
+
+<p>
+Movie reviews, cinematic analysis
+and stories behind the screen.
+</p>
+
+<a href="journal.html">
+Read Column
+</a>
+
+</article>
+
+
+
+
+<article class="gazette-card">
+
+<h3>
+📺 Television Column
+</h3>
+
+<p>
+Character studies, series reviews
+and fictional worlds explored.
+</p>
+
+<a href="journal.html">
+Read Column
+</a>
+
+</article>
+
+
+
+
+<article class="gazette-card">
+
+<h3>
+📚 The Reading Room
+</h3>
+
+<p>
+Book reviews, literary reflections
+and reading discoveries.
+</p>
+
+<a href="journal.html">
+Read Column
+</a>
+
+</article>
+
+
+
+
+<article class="gazette-card">
+
+<h3>
+🎥 Documentary Archive
+</h3>
+
+<p>
+History, archaeology and
+real-world stories.
+</p>
+
+<a href="journal.html">
+Read Column
+</a>
+
+</article>
+
+
+
+
+<article class="gazette-card">
+
+<h3>
+🏺 Mythology Archive
+</h3>
+
+<p>
+Ancient legends, forgotten gods
+and mythical worlds.
+</p>
+
+<a href="journal.html">
+Read Column
+</a>
+
+</article>
+
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+<!-- =====================================
+     LATEST ARTICLES
+===================================== -->
+
+
+<section class="journal-section">
+
+
+<h2>
+Latest Dispatches
+</h2>
+
+
+
+<article class="journal-entry">
+
+
+<div class="entry-meta">
+
+<span>
+Archive No.001
+</span>
+
+<span>
+Weekly Edition
+</span>
+
+</div>
+
+
+
+<h3>
+The Epic of Gilgamesh and the First Hero
+</h3>
+
+
+<p>
+Exploring one of humanity's oldest surviving stories
+and the inspiration behind modern fantasy.
+</p>
+
+
+<a href="journal.html">
+Read Article
+</a>
+
+
+</article>
+
+
+
+<article class="journal-entry">
+
+
+<div class="entry-meta">
+
+<span>
+Archive No.002
+</span>
+
+<span>
+Reading Room
+</span>
+
+</div>
+
+
+<h3>
+Books That Inspire the Writer's Desk
+</h3>
+
+
+<p>
+Historical fiction, mythology and stories
+that shape new worlds.
+</p>
+
+
+<a href="journal.html">
+Read Article
+</a>
+
+
+</article>
+
+
+
+</section>
+
+
+
+
+
+<!-- =====================================
+     BOOK ARCHIVE
+===================================== -->
+
+
+<section class="my-books">
+
+
+<h2>
+Published Projects
+</h2>
+
+
+
+<div class="books-grid">
+
+
+
+<article class="book-card">
+
+
+<img 
+src="images/love-and-corsets.jpg"
+alt="Love and Corsets"
+>
+
+
+<div>
+
+
+<span class="book-category">
+Historical Romance
+</span>
+
+
+<h3>
+Love and Corsets
+</h3>
+
+
+<p>
+A Versailles romance exploring
+love, ambition and expectation.
+</p>
+
+
+<a href="mybooks/love-and-corsets.html">
+Explore Book
+</a>
+
+
+</div>
+
+
+</article>
+
+
+
+<article class="book-card">
+
+
+<img 
+src="images/dummy-babylonia-1.jpg"
+alt="Threads of Babylonia"
+>
+
+
+<div>
+
+
+<span class="book-category">
+Mythological Fantasy
+</span>
+
+
+<h3>
+Threads of Babylonia
+</h3>
+
+
+<p>
+A retelling of Gilgamesh,
+destiny and forgotten primordial forces.
+</p>
+
+
+<a href="mybooks/babylonia-book-1.html">
+Enter Chapter
+</a>
+
+
+</div>
+
+
+</article>
+
+
+
+</div>
+
+
+
+</section>
+
+
+
+
+
+<!-- =====================================
+     AUTHOR PROFILE
+===================================== -->
+
+
+<section class="author-section">
+
+
+
+<div>
+
+
+<img 
+src="images/images/manon-theys-author.jpg"
+alt="Author portrait"
+class="author-photo"
+>
+
+
+<p class="photo-caption">
+The author behind Salt & Paper Stories
+</p>
+
+
+</div>
+
+
+
+
+<div class="author-text">
+
+
+<h2>
+From the Writer's Desk
+</h2>
+
+
+<p>
+I write historical and mythological fiction
+infused with romance, intrigue and epic storytelling.
+</p>
+
+
+<p>
+Inspired by ancient legends, forgotten histories
+and emotionally complex characters.
+</p>
+
+
+
+<a class="btn" href="about.html">
+Meet the Author
+</a>
+
+
+
+</div>
+
+
+
+</section>
+
+
+
+
+
+<!-- =====================================
+     NEWSLETTER
+===================================== -->
+
+
+<section class="newsletter-section">
+
+
+<h2>
+Join the Literary Gazette
+</h2>
+
+
+<p>
+Receive writing updates, reading notes,
+book announcements and weekly discoveries.
+</p>
+
+
+
+<a class="btn" href="newsletter.html">
+Subscribe
+</a>
+
+
+
+</section>
+
+
+
+
+</main>
+
+
+
+<footer>
+
+
+<div class="footer-title">
+Salt & Paper Stories
+</div>
+
+
+<div class="footer-meta">
+
+Literary Gazette • Volume I • 2026
+
+</div>
+
+
+<p>
+© 2026 Manon Theys
+</p>
+
+
+</footer>
+
+
+
+</div>
+
+
 </body>
+
 </html>
