@@ -1,0 +1,6418 @@
+/* =========================================
+   SALT & PAPER STORIES
+   Literary Gazette Theme
+   Dark Academia Newspaper Edition
+   ========================================= */
+
+
+/* =========================================
+   FONTS
+   ========================================= */
+
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600;700&family=Great+Vibes&family=Cinzel:wght@400;600&display=swap');
+
+
+
+/* =========================================
+   ROOT PALETTE
+   ========================================= */
+
+:root {
+
+    /* Newspaper surfaces */
+    --paper:
+        #E6D8C3;
+    --paper-light:
+        #F3E8D5;
+    --paper-aged:
+        #CDB58E;
+
+    /* Ink */
+    --ink:
+        #211713;
+    --soft-ink:
+        #4A3528;
+
+    /* Gothic */
+    --black:
+        #080707;
+    --deep-black:
+        #050404;
+
+    /* Panels */
+    --smoke:
+        #1C1A1A;
+    --ash:
+        #2A2727;
+
+    /* Accents */
+    --gold:
+        #B08D57;
+    --old-gold:
+        #8C6A3D;
+
+    /* Romance */
+    --wine:
+        #5B1F2A;
+    --deep-wine:
+        #3B0F18;
+
+    /* Wood */
+    --wood:
+        #603A2A;
+
+    /* Functional */
+    --bg:
+        var(--black);
+    --text:
+        var(--paper);
+    --accent:
+        var(--gold);
+    --accent-two:
+        var(--wine);
+    --border:
+        var(--old-gold);
+
+}
+
+
+/* =========================================
+   BABYLONIA THEME
+   Ancient Manuscript Edition
+   ========================================= */
+
+body[data-theme="babylonia"] {
+    --bg:
+        #261710;
+    --paper:
+        #E8D3AA;
+    --paper-light:
+        #F5E8C9;
+    --text:
+        #F0E2C8;
+    --ink:
+        #24150D;
+    --soft-ink:
+        #59402B;
+    --accent:
+        #C8A45D;
+    --accent-two:
+        #8C6A3D;
+    --border:
+        #A1734A;
+}
+
+
+/* =========================================
+   GOTHIC THEME
+   ========================================= */
+
+body[data-theme="gothic"] {
+    --bg:
+        var(--deep-black);
+    --paper:
+        #E6D8C3;
+    --text:
+        var(--paper);
+    --ink:
+        #1B1412;
+    --accent:
+        var(--gold);
+    --accent-two:
+        var(--wine);
+    --border:
+        var(--wood);
+}
+
+/* =========================================
+   GLOBAL NEWSPAPER FOUNDATION
+   ========================================= */
+
+
+/* =========================================
+   BODY
+   The desk behind the newspaper
+   ========================================= */
+
+
+body {
+
+    margin:
+        0;
+    background:
+        radial-gradient(
+            circle at top,
+            #3a2920,
+            #080707 70%
+        );
+    color:
+        var(--paper);
+    font-family:
+        "Cormorant Garamond",
+        serif;
+    line-height:
+        1.7;
+    min-height:
+        100vh;
+
+}
+
+/* =========================================
+   NEWSPAPER PAPER THEME
+   ========================================= */
+
+body[data-theme="newspaper"] {
+
+    --bg: #E8DCC8;
+    --panel: #F4EBDD;
+    --text: #2B2118;
+    --muted: #6B5845;
+
+    --accent: #8C6A3D;
+    --accent-2: #5B1F2A;
+    --border: #A1734A;
+
+}
+
+/* =========================================
+   NEWSPAPER SHEET
+   ========================================= */
+
+main {
+    max-width:
+        1250px;
+    margin:
+        40px auto;
+    padding:
+        45px;
+    background:
+        var(--paper);
+    color:
+        var(--ink);
+    box-shadow:
+        0 25px 70px rgba(0,0,0,.75);
+    position:
+        relative;
+    overflow:
+        hidden;
+}
+
+/* Paper texture */
+main::before {
+    content:"";
+    position:
+        absolute;
+    inset:
+        0;
+    background:
+        radial-gradient(
+            rgba(70,40,20,.12) 1px,
+            transparent 1px
+        );
+    background-size:
+        6px 6px;
+    opacity:
+        .35;
+    pointer-events:
+        none;
+}
+
+/* =========================================
+   SECTIONS
+   Newspaper articles
+   ========================================= */
+section {
+    max-width:
+        none;
+    margin:
+        0;
+    padding:
+        35px 0;
+    border-bottom:
+        1px solid rgba(80,50,30,.35);
+}
+
+/* Last section */
+section:last-child {
+    border-bottom:
+        none;
+}
+
+/* =========================================
+   TYPOGRAPHY
+   ========================================= */
+h1,
+h2,
+h3 {
+    font-family:
+        "Cinzel",
+        serif;
+    font-weight:
+        600;
+    color:
+        var(--wine);
+    line-height:
+        1.2;
+}
+
+/* Main newspaper title */
+h1 {
+    font-size:
+        clamp(
+            2.5rem,
+            5vw,
+            4.5rem
+        );
+    letter-spacing:
+        4px;
+}
+/* Article headlines */
+h2 {
+    font-size:
+        2.2rem;
+    border-bottom:
+        1px solid var(--old-gold);
+    padding-bottom:
+        10px;
+}
+/* Smaller headlines */
+h3 {
+    font-size:
+        1.4rem;
+}
+
+/* Body text */
+p {
+    font-size:
+        18px;
+    color:
+        var(--ink);
+    text-align:
+        justify;
+}
+/* Drop cap effect */
+
+.drop-cap::first-letter {
+    float:
+        left;
+    font-family:
+        "Great Vibes",
+        cursive;
+    font-size:
+        70px;
+    line-height:
+        .8;
+    padding-right:
+        10px;
+    color:
+        var(--wine);
+}
+/* =========================================
+   LINKS
+   Newspaper ink style
+   ========================================= */
+a {
+    color:
+        var(--wine);
+    text-decoration:
+        none;
+    border-bottom:
+        1px solid transparent;
+    transition:
+        .3s ease;
+}
+
+a:hover {
+    color:
+        var(--gold);
+    border-bottom:
+        1px solid var(--gold);
+}
+
+/* =========================================
+   DIVIDERS
+   Newspaper separators
+   ========================================= */
+.newspaper-divider {
+    display:
+        flex;
+    align-items:
+        center;
+    gap:
+        15px;
+    margin:
+        25px 0;
+}
+
+.newspaper-divider::before,
+.newspaper-divider::after {
+
+    content:"";
+
+
+    height:
+
+        1px;
+
+
+    background:
+
+        var(--old-gold);
+
+
+    flex:
+
+        1;
+
+}
+
+
+
+.newspaper-divider span {
+
+    font-family:
+
+        "Cinzel",
+        serif;
+
+
+    letter-spacing:
+
+        3px;
+
+
+    font-size:
+
+        .8rem;
+
+
+    text-transform:
+
+        uppercase;
+
+}
+
+/* =========================================
+   NEWSPAPER MASTHEAD
+   ========================================= */
+
+
+header {
+
+    background:
+
+        var(--paper);
+
+
+    color:
+
+        var(--ink);
+
+
+    text-align:
+
+        center;
+
+
+    padding:
+
+        25px 20px;
+
+
+    border-bottom:
+
+        5px double var(--old-gold);
+
+
+    position:
+
+        relative;
+
+}
+
+
+
+/* Small publication line */
+
+.masthead-top {
+
+    font-family:
+
+        "Cinzel",
+        serif;
+
+
+    font-size:
+
+        .75rem;
+
+
+    letter-spacing:
+
+        5px;
+
+
+    text-transform:
+
+        uppercase;
+
+
+    color:
+
+        var(--soft-ink);
+
+
+    margin-bottom:
+
+        15px;
+
+}
+
+
+
+/* Main newspaper title */
+
+header h1 {
+
+    font-family:
+
+        "Great Vibes",
+        cursive;
+
+
+    font-size:
+
+        clamp(
+            3rem,
+            7vw,
+            5.5rem
+        );
+
+
+    font-weight:
+
+        400;
+
+
+    color:
+
+        var(--wine);
+
+
+    margin:
+
+        0;
+
+
+    letter-spacing:
+
+        2px;
+
+}
+
+
+
+/* Subtitle */
+
+.masthead-subtitle {
+
+    font-family:
+
+        "Cormorant Garamond",
+        serif;
+
+
+    font-size:
+
+        1.3rem;
+
+
+    font-style:
+
+        italic;
+
+
+    color:
+
+        var(--soft-ink);
+
+
+    margin-top:
+
+        10px;
+
+}
+
+
+
+/* Issue information */
+
+.masthead-meta {
+
+    display:
+
+        flex;
+
+
+    justify-content:
+
+        center;
+
+
+    gap:
+
+        30px;
+
+
+    margin-top:
+
+        20px;
+
+
+    padding:
+
+        10px 0;
+
+
+    border-top:
+
+        1px solid var(--old-gold);
+
+
+    border-bottom:
+
+        1px solid var(--old-gold);
+
+
+    font-family:
+
+        "Cinzel",
+        serif;
+
+
+    font-size:
+
+        .75rem;
+
+
+    letter-spacing:
+
+        2px;
+
+}
+
+
+
+/* =========================================
+   NAVIGATION BAR
+   Newspaper menu strip
+   ========================================= */
+
+
+nav {
+
+    margin-top:
+
+        20px;
+
+
+    padding:
+
+        12px 0;
+
+
+    border-top:
+
+        3px double var(--old-gold);
+
+
+    border-bottom:
+
+        3px double var(--old-gold);
+
+
+    display:
+
+        flex;
+
+
+    justify-content:
+
+        center;
+
+
+    flex-wrap:
+
+        wrap;
+
+
+    gap:
+
+        0;
+
+}
+
+
+
+/* Navigation links */
+
+nav a {
+
+    position:
+
+        relative;
+
+
+    padding:
+
+        8px 22px;
+
+
+    color:
+
+        var(--ink);
+
+
+    font-family:
+
+        "Cinzel",
+        serif;
+
+
+    font-size:
+
+        .85rem;
+
+
+    letter-spacing:
+
+        2px;
+
+
+    text-transform:
+
+        uppercase;
+
+
+    border-right:
+
+        1px solid rgba(90,60,40,.35);
+
+
+    transition:
+
+        .3s ease;
+
+}
+
+
+
+/* Remove last divider */
+
+nav a:last-child {
+
+    border-right:
+
+        none;
+
+}
+
+
+
+/* Hover */
+
+nav a:hover {
+
+    background:
+
+        var(--wine);
+
+
+    color:
+
+        var(--paper);
+
+
+    border-bottom:
+
+        none;
+
+}
+
+
+
+/* Active page */
+
+nav a.active {
+
+    background:
+
+        var(--old-gold);
+
+
+    color:
+
+        var(--paper);
+
+}
+
+
+
+/* =========================================
+   MOBILE NAVIGATION
+   ========================================= */
+
+
+@media(max-width:768px){
+
+
+    .masthead-meta {
+
+        flex-direction:
+
+            column;
+
+
+        gap:
+
+            8px;
+
+    }
+
+
+
+    nav a {
+
+        width:
+
+            100%;
+
+
+        border-right:
+
+            none;
+
+
+        border-bottom:
+
+            1px solid rgba(90,60,40,.2);
+
+    }
+
+
+}
+
+/* =========================================
+   FRONT PAGE HERO
+   Newspaper Feature Layout
+   ========================================= */
+
+
+.hero {
+
+    display:
+
+        grid;
+
+
+    grid-template-columns:
+
+        2fr 1fr;
+
+
+    gap:
+
+        25px;
+
+
+    padding:
+
+        35px 0;
+
+
+    background:
+
+        transparent;
+
+
+    border-bottom:
+
+        3px double var(--old-gold);
+
+}
+
+
+
+/* =========================================
+   MAIN FEATURE STORY
+   ========================================= */
+
+
+.hero-main {
+
+    position:
+
+        relative;
+
+
+    padding:
+
+        25px;
+
+
+    border:
+
+        1px solid rgba(90,60,40,.35);
+
+
+    background:
+
+        var(--paper-light);
+
+}
+
+
+
+.hero-main h1 {
+
+    font-family:
+
+        "Cinzel",
+        serif;
+
+
+    font-size:
+
+        clamp(
+            2.5rem,
+            5vw,
+            4rem
+        );
+
+
+    color:
+
+        var(--wine);
+
+
+    margin-bottom:
+
+        15px;
+
+}
+
+
+
+.hero-main p {
+
+    font-size:
+
+        1.2rem;
+
+}
+
+
+
+/* Feature image */
+
+.hero-main img {
+
+    width:
+
+        100%;
+
+
+    max-height:
+
+        450px;
+
+
+    object-fit:
+
+        cover;
+
+
+    margin-bottom:
+
+        20px;
+
+
+    border:
+
+        1px solid var(--old-gold);
+
+}
+
+
+
+/* Label above story */
+
+.story-label {
+
+    font-family:
+
+        "Cinzel",
+        serif;
+
+
+    text-transform:
+
+        uppercase;
+
+
+    letter-spacing:
+
+        3px;
+
+
+    font-size:
+
+        .75rem;
+
+
+    color:
+
+        var(--old-gold);
+
+}
+
+
+
+/* =========================================
+   SIDE COLUMN
+   ========================================= */
+
+
+.hero-sidebar {
+
+    display:
+
+        flex;
+
+
+    flex-direction:
+
+        column;
+
+
+    gap:
+
+        20px;
+
+}
+
+
+
+.hero-card {
+
+    padding:
+
+        20px;
+
+
+    background:
+
+        transparent;
+
+
+    border:
+
+        1px solid rgba(90,60,40,.35);
+
+}
+
+
+
+.hero-card h3 {
+
+    font-size:
+
+        1.5rem;
+
+
+    margin-top:
+
+        0;
+
+}
+
+
+
+.hero-card p {
+
+    font-size:
+
+        1rem;
+
+}
+
+
+
+/* =========================================
+   MINI HEADLINES
+   ========================================= */
+
+
+.headline-list {
+
+    list-style:
+
+        none;
+
+
+    padding:
+
+        0;
+
+}
+
+
+
+.headline-list li {
+
+    padding:
+
+        12px 0;
+
+
+    border-bottom:
+
+        1px solid rgba(90,60,40,.3);
+
+
+    font-family:
+
+        "Cormorant Garamond",
+        serif;
+
+
+    font-size:
+
+        1.1rem;
+
+}
+
+
+
+.headline-list li:last-child {
+
+    border-bottom:
+
+        none;
+
+}
+
+
+
+/* =========================================
+   FRONT PAGE BUTTONS
+   ========================================= */
+
+
+.hero-button {
+
+    display:
+
+        inline-block;
+
+
+    margin-top:
+
+        20px;
+
+
+    padding:
+
+        10px 25px;
+
+
+    background:
+
+        var(--wine);
+
+
+    color:
+
+        var(--paper);
+
+
+    font-family:
+
+        "Cinzel",
+        serif;
+
+
+    letter-spacing:
+
+        2px;
+
+
+    text-transform:
+
+        uppercase;
+
+
+    border:
+
+        none;
+
+
+    transition:
+
+        .3s ease;
+
+}
+
+
+
+.hero-button:hover {
+
+    background:
+
+        var(--gold);
+
+
+    color:
+
+        var(--ink);
+
+}
+
+
+
+/* =========================================
+   BREAKING FEATURE STRIP
+   ========================================= */
+
+
+.feature-strip {
+
+    display:
+
+        grid;
+
+
+    grid-template-columns:
+
+        repeat(3,1fr);
+
+
+    gap:
+
+        20px;
+
+
+    padding:
+
+        25px 0;
+
+
+    border-bottom:
+
+        1px solid var(--old-gold);
+
+}
+
+
+
+.feature-box {
+
+    padding:
+
+        15px;
+
+
+    border-right:
+
+        1px solid rgba(90,60,40,.3);
+
+}
+
+
+
+.feature-box:last-child {
+
+    border-right:
+
+        none;
+
+}
+
+
+
+.feature-box h3 {
+
+    font-size:
+
+        1.3rem;
+
+}
+
+
+
+/* =========================================
+   MOBILE HERO
+   ========================================= */
+
+
+@media(max-width:768px){
+
+
+    .hero {
+
+        grid-template-columns:
+
+            1fr;
+
+    }
+
+
+
+    .feature-strip {
+
+        grid-template-columns:
+
+            1fr;
+
+    }
+
+
+
+    .feature-box {
+
+        border-right:
+
+            none;
+
+
+        border-bottom:
+
+            1px solid rgba(90,60,40,.3);
+
+    }
+
+}
+
+/* =========================================
+   NEWSPAPER GRID SYSTEM
+   ========================================= */
+
+
+/* Main editorial grid */
+
+.newspaper-grid {
+
+    display:
+
+        grid;
+
+
+    grid-template-columns:
+
+        repeat(12, 1fr);
+
+
+    gap:
+
+        20px;
+
+
+    margin:
+
+        30px 0;
+
+}
+
+
+
+/* =========================================
+   COLUMN SIZES
+   ========================================= */
+
+
+/* Main article */
+
+.column-main {
+
+    grid-column:
+
+        span 8;
+
+}
+
+
+
+/* Sidebar article */
+
+.column-side {
+
+    grid-column:
+
+        span 4;
+
+}
+
+
+
+/* Three equal newspaper columns */
+
+.column-third {
+
+    grid-column:
+
+        span 4;
+
+}
+
+
+
+/* Half page */
+
+.column-half {
+
+    grid-column:
+
+        span 6;
+
+}
+
+
+
+/* Full width feature */
+
+.column-full {
+
+    grid-column:
+
+        span 12;
+
+}
+
+
+
+/* =========================================
+   ARTICLE BLOCKS
+   ========================================= */
+
+
+.article-block {
+
+    padding:
+
+        20px;
+
+
+    border-top:
+
+        3px double var(--old-gold);
+
+
+    border-bottom:
+
+        1px solid rgba(90,60,40,.3);
+
+}
+
+
+
+.article-block h2 {
+
+    margin-top:
+
+        0;
+
+}
+
+
+
+/* Small newspaper articles */
+
+.article-small {
+
+    padding:
+
+        15px;
+
+
+    border-bottom:
+
+        1px solid rgba(90,60,40,.3);
+
+}
+
+
+
+.article-small h3 {
+
+    font-size:
+
+        1.2rem;
+
+}
+
+
+
+/* =========================================
+   PRINTED ARTICLE COLUMNS
+   ========================================= */
+
+
+.text-columns {
+
+    column-count:
+
+        2;
+
+
+    column-gap:
+
+        30px;
+
+
+    text-align:
+
+        justify;
+
+}
+
+
+
+.text-columns p {
+
+    break-inside:
+
+        avoid;
+
+}
+
+
+
+/* Three-column edition */
+
+.text-columns.three {
+
+    column-count:
+
+        3;
+
+}
+
+
+
+/* =========================================
+   NEWSPAPER SIDEBAR
+   ========================================= */
+
+
+.sidebar-box {
+
+    padding:
+
+        20px;
+
+
+    background:
+
+        rgba(140,106,61,.12);
+
+
+    border:
+
+        1px solid var(--old-gold);
+
+}
+
+
+
+.sidebar-title {
+
+    font-family:
+
+        "Cinzel",
+        serif;
+
+
+    text-transform:
+
+        uppercase;
+
+
+    letter-spacing:
+
+        3px;
+
+
+    font-size:
+
+        .8rem;
+
+
+    color:
+
+        var(--wine);
+
+
+    margin-bottom:
+
+        15px;
+
+}
+
+
+
+/* =========================================
+   QUOTE / PULL QUOTE
+   ========================================= */
+
+
+.pull-quote {
+
+    font-family:
+
+        "Great Vibes",
+        cursive;
+
+
+    font-size:
+
+        2.5rem;
+
+
+    color:
+
+        var(--wine);
+
+
+    text-align:
+
+        center;
+
+
+    padding:
+
+        30px;
+
+
+    border-top:
+
+        1px solid var(--old-gold);
+
+
+    border-bottom:
+
+        1px solid var(--old-gold);
+
+}
+
+
+
+/* =========================================
+   NEWSPAPER CLIPPINGS
+   ========================================= */
+
+
+.clipping {
+
+    background:
+
+        var(--paper-light);
+
+
+    padding:
+
+        20px;
+
+
+    border:
+
+        1px solid rgba(90,60,40,.4);
+
+
+    box-shadow:
+
+        5px 8px 15px rgba(0,0,0,.15);
+
+
+    transform:
+
+        rotate(-1deg);
+
+}
+
+
+
+.clipping:nth-child(even) {
+
+    transform:
+
+        rotate(1deg);
+
+}
+
+
+
+.clipping-title {
+
+    font-family:
+
+        "Cinzel",
+        serif;
+
+
+    font-size:
+
+        .9rem;
+
+
+    letter-spacing:
+
+        2px;
+
+
+    color:
+
+        var(--wine);
+
+}
+
+
+
+/* =========================================
+   DATE STAMP
+   ========================================= */
+
+
+.date-stamp {
+
+    display:
+
+        inline-block;
+
+
+    font-family:
+
+        "Cinzel",
+        serif;
+
+
+    font-size:
+
+        .7rem;
+
+
+    letter-spacing:
+
+        2px;
+
+
+    text-transform:
+
+        uppercase;
+
+
+    padding:
+
+        5px 10px;
+
+
+    border:
+
+        1px solid var(--old-gold);
+
+
+    color:
+
+        var(--old-gold);
+
+}
+
+
+
+/* =========================================
+   DIVIDER WITH ORNAMENT
+   ========================================= */
+
+
+.ornamental-divider {
+
+    text-align:
+
+        center;
+
+
+    margin:
+
+        25px 0;
+
+
+    color:
+
+        var(--gold);
+
+
+    font-size:
+
+        1.3rem;
+
+}
+
+
+
+.ornamental-divider::before,
+.ornamental-divider::after {
+
+    content:
+
+        "────────";
+
+
+    padding:
+
+        0 15px;
+
+}
+
+
+
+/* =========================================
+   MOBILE NEWSPAPER
+   ========================================= */
+
+
+@media(max-width:768px){
+
+
+    .column-main,
+    .column-side,
+    .column-third,
+    .column-half {
+
+        grid-column:
+
+            span 12;
+
+    }
+
+
+
+    .text-columns,
+    .text-columns.three {
+
+        column-count:
+
+            1;
+
+    }
+
+}
+
+/* =========================================
+   AUTHOR PROFILE SECTION
+   Literary Interview Layout
+   ========================================= */
+
+
+/* Main author spread */
+
+.author-section {
+
+    display:
+
+        grid;
+
+
+    grid-template-columns:
+
+        300px 1fr;
+
+
+    gap:
+
+        35px;
+
+
+    padding:
+
+        35px 0;
+
+
+    align-items:
+
+        start;
+
+}
+
+
+
+/* =========================================
+   AUTHOR PORTRAIT
+   Newspaper Photograph
+   ========================================= */
+
+
+.author-photo {
+
+    width:
+
+        100%;
+
+
+    border-radius:
+
+        0;
+
+
+    border:
+
+        8px solid var(--paper-light);
+
+
+    outline:
+
+        1px solid var(--old-gold);
+
+
+    box-shadow:
+
+        0 15px 35px rgba(0,0,0,.35);
+
+
+    filter:
+
+        sepia(.25)
+        contrast(1.05);
+
+
+    transition:
+
+        .3s ease;
+
+}
+
+
+
+.author-photo:hover {
+
+    transform:
+
+        translateY(-5px);
+
+}
+
+
+
+/* Caption under photo */
+
+.photo-caption {
+
+    text-align:
+
+        center;
+
+
+    margin-top:
+
+        10px;
+
+
+    font-family:
+
+        "Cormorant Garamond",
+        serif;
+
+
+    font-style:
+
+        italic;
+
+
+    color:
+
+        var(--soft-ink);
+
+
+    font-size:
+
+        .95rem;
+
+}
+
+
+
+/* =========================================
+   AUTHOR ARTICLE
+   ========================================= */
+
+
+.author-text {
+
+    position:
+
+        relative;
+
+}
+
+
+
+.author-text::before {
+
+    content:
+
+        "PROFILE";
+
+
+    font-family:
+
+        "Cinzel",
+        serif;
+
+
+    letter-spacing:
+
+        4px;
+
+
+    font-size:
+
+        .7rem;
+
+
+    color:
+
+        var(--old-gold);
+
+}
+
+
+
+/* Author headline */
+
+.author-text h2 {
+
+    font-family:
+
+        "Great Vibes",
+        cursive;
+
+
+    font-size:
+
+        3.5rem;
+
+
+    font-weight:
+
+        400;
+
+
+    color:
+
+        var(--wine);
+
+
+    border-bottom:
+
+        none;
+
+
+}
+
+
+
+/* Biography paragraphs */
+
+.author-text p {
+
+    font-size:
+
+        1.15rem;
+
+
+    text-align:
+
+        justify;
+
+}
+
+
+
+/* =========================================
+   AUTHOR QUOTE
+   ========================================= */
+
+
+.author-quote {
+
+    margin:
+
+        25px 0;
+
+
+    padding:
+
+        20px;
+
+
+    border-left:
+
+        4px solid var(--gold);
+
+
+    background:
+
+        rgba(176,141,87,.12);
+
+
+    font-family:
+
+        "Cormorant Garamond",
+        serif;
+
+
+    font-size:
+
+        1.4rem;
+
+
+    font-style:
+
+        italic;
+
+}
+
+
+
+/* =========================================
+   WRITER'S DESK NOTES
+   ========================================= */
+
+
+.writer-notes {
+
+    display:
+
+        grid;
+
+
+    grid-template-columns:
+
+        repeat(3,1fr);
+
+
+    gap:
+
+        20px;
+
+
+    margin-top:
+
+        35px;
+
+}
+
+
+
+.writer-note {
+
+    padding:
+
+        18px;
+
+
+    border:
+
+        1px solid rgba(90,60,40,.35);
+
+
+    background:
+
+        var(--paper-light);
+
+
+    position:
+
+        relative;
+
+}
+
+
+
+.writer-note h3 {
+
+    font-size:
+
+        1.2rem;
+
+
+    margin-top:
+
+        0;
+
+}
+
+
+
+.writer-note p {
+
+    font-size:
+
+        1rem;
+
+}
+
+
+
+/* Notebook label */
+
+.writer-note::before {
+
+    content:
+
+        "AUTHOR'S DESK";
+
+
+    position:
+
+        absolute;
+
+
+    top:
+
+        8px;
+
+
+    right:
+
+        10px;
+
+
+    font-family:
+
+        "Cinzel",
+        serif;
+
+
+    font-size:
+
+        .55rem;
+
+
+    letter-spacing:
+
+        2px;
+
+
+    color:
+
+        var(--old-gold);
+
+}
+
+
+
+/* =========================================
+   AUTHOR TIMELINE
+   ========================================= */
+
+
+.author-timeline {
+
+    margin-top:
+
+        40px;
+
+
+    border-top:
+
+        3px double var(--old-gold);
+
+}
+
+
+
+.timeline-entry {
+
+    display:
+
+        grid;
+
+
+    grid-template-columns:
+
+        120px 1fr;
+
+
+    padding:
+
+        15px 0;
+
+
+    border-bottom:
+
+        1px solid rgba(90,60,40,.3);
+
+}
+
+
+
+.timeline-year {
+
+    font-family:
+
+        "Cinzel",
+        serif;
+
+
+    color:
+
+        var(--wine);
+
+}
+
+
+
+/* =========================================
+   MOBILE AUTHOR PAGE
+   ========================================= */
+
+
+@media(max-width:768px){
+
+
+    .author-section {
+
+        grid-template-columns:
+
+            1fr;
+
+        text-align:
+
+            center;
+
+    }
+
+
+
+    .writer-notes {
+
+        grid-template-columns:
+
+            1fr;
+
+    }
+
+
+
+    .timeline-entry {
+
+        grid-template-columns:
+
+            1fr;
+
+        gap:
+
+            10px;
+
+    }
+
+}
+
+/* =========================================
+   BOOK ARCHIVE
+   Literary Review Section
+   ========================================= */
+
+
+/* =========================================
+   BOOK SECTION HEADER
+   ========================================= */
+
+
+.my-books {
+
+    padding:
+
+        35px 0;
+
+}
+
+
+
+.my-books h2 {
+
+    font-family:
+
+        "Cinzel",
+        serif;
+
+
+    font-size:
+
+        2.5rem;
+
+
+    text-align:
+
+        center;
+
+
+    color:
+
+        var(--wine);
+
+
+    border-bottom:
+
+        3px double var(--old-gold);
+
+
+    padding-bottom:
+
+        20px;
+
+}
+
+
+
+/* =========================================
+   BOOK NEWSPAPER GRID
+   ========================================= */
+
+
+.books-grid {
+
+    display:
+
+        grid;
+
+
+    grid-template-columns:
+
+        repeat(2,1fr);
+
+
+    gap:
+
+        25px;
+
+
+    margin-top:
+
+        30px;
+
+}
+
+
+
+/* =========================================
+   BOOK ARTICLE CARD
+   ========================================= */
+
+
+.book-card {
+
+    display:
+
+        grid;
+
+
+    grid-template-columns:
+
+        120px 1fr;
+
+
+    gap:
+
+        20px;
+
+
+    padding:
+
+        20px 0;
+
+
+    background:
+
+        transparent;
+
+
+    border-bottom:
+
+        1px solid rgba(90,60,40,.35);
+
+
+    box-shadow:
+
+        none;
+
+
+    border-radius:
+
+        0;
+
+
+    text-align:
+
+        left;
+
+
+    transition:
+
+        .3s ease;
+
+}
+
+
+
+.book-card:hover {
+
+    transform:
+
+        translateX(5px);
+
+}
+
+
+
+/* =========================================
+   BOOK COVER
+   ========================================= */
+
+
+.book-card img {
+
+    width:
+
+        110px;
+
+
+    height:
+
+        auto;
+
+
+    border-radius:
+
+        0;
+
+
+    border:
+
+        1px solid var(--old-gold);
+
+
+    box-shadow:
+
+        4px 8px 15px rgba(0,0,0,.25);
+
+}
+
+
+
+/* =========================================
+   BOOK INFORMATION
+   ========================================= */
+
+
+.book-card h3 {
+
+    margin:
+
+        0 0 8px;
+
+
+    font-family:
+
+        "Cinzel",
+        serif;
+
+
+    font-size:
+
+        1.4rem;
+
+
+    color:
+
+        var(--wine);
+
+}
+
+
+
+.book-card p {
+
+    font-size:
+
+        1rem;
+
+
+    line-height:
+
+        1.5;
+
+}
+
+
+
+/* Book category */
+
+.book-category {
+
+    font-family:
+
+        "Cinzel",
+        serif;
+
+
+    text-transform:
+
+        uppercase;
+
+
+    letter-spacing:
+
+        2px;
+
+
+    font-size:
+
+        .65rem;
+
+
+    color:
+
+        var(--old-gold);
+
+}
+
+
+
+/* =========================================
+   FEATURED BOOK ARTICLE
+   ========================================= */
+
+
+.featured-book {
+
+    display:
+
+        grid;
+
+
+    grid-template-columns:
+
+        180px 1fr;
+
+
+    gap:
+
+        30px;
+
+
+    padding:
+
+        30px;
+
+
+    background:
+
+        rgba(176,141,87,.12);
+
+
+    border:
+
+        1px solid var(--old-gold);
+
+
+    margin-bottom:
+
+        35px;
+
+}
+
+
+
+.featured-book img {
+
+    width:
+
+        160px;
+
+
+    border:
+
+        1px solid var(--old-gold);
+
+}
+
+
+
+.featured-book h2 {
+
+    border:
+
+        none;
+
+
+    padding:
+
+        0;
+
+}
+
+
+
+/* =========================================
+   BOOK EXCERPT
+   ========================================= */
+
+
+.book-excerpt {
+
+    margin-top:
+
+        15px;
+
+
+    padding:
+
+        15px;
+
+
+    border-left:
+
+        3px solid var(--gold);
+
+
+    font-style:
+
+        italic;
+
+
+    background:
+
+        rgba(90,60,40,.08);
+
+}
+
+
+
+/* =========================================
+   BOOK BUTTONS
+   ========================================= */
+
+
+.book-links {
+
+    display:
+
+        flex;
+
+
+    gap:
+
+        10px;
+
+
+    margin-top:
+
+        15px;
+
+
+    flex-wrap:
+
+        wrap;
+
+}
+
+
+
+.book-button {
+
+    display:
+
+        inline-block;
+
+
+    padding:
+
+        8px 16px;
+
+
+    background:
+
+        var(--wine);
+
+
+    color:
+
+        var(--paper);
+
+
+    font-family:
+
+        "Cinzel",
+        serif;
+
+
+    font-size:
+
+        .75rem;
+
+
+    letter-spacing:
+
+        1px;
+
+
+    text-transform:
+
+        uppercase;
+
+
+    border-radius:
+
+        0;
+
+
+    transition:
+
+        .3s ease;
+
+}
+
+
+
+.book-button:hover {
+
+    background:
+
+        var(--gold);
+
+
+    color:
+
+        var(--ink);
+
+}
+
+
+
+.book-button.secondary {
+
+    background:
+
+        transparent;
+
+
+    border:
+
+        1px solid var(--wine);
+
+
+    color:
+
+        var(--wine);
+
+}
+
+
+
+.book-button.disabled {
+
+    background:
+
+        #555;
+
+
+    opacity:
+
+        .6;
+
+
+}
+
+
+
+/* =========================================
+   MOBILE BOOK ARCHIVE
+   ========================================= */
+
+
+@media(max-width:768px){
+
+
+    .books-grid {
+
+        grid-template-columns:
+
+            1fr;
+
+    }
+
+
+
+    .book-card,
+    .featured-book {
+
+        grid-template-columns:
+
+            1fr;
+
+        text-align:
+
+            center;
+
+    }
+
+
+
+    .book-card img,
+    .featured-book img {
+
+        margin:
+
+            auto;
+
+    }
+
+}
+
+/* =========================================
+   BOOK ARCHIVE
+   Literary Review Section
+   ========================================= */
+
+
+/* =========================================
+   BOOK SECTION HEADER
+   ========================================= */
+
+
+.my-books {
+
+    padding:
+
+        35px 0;
+
+}
+
+
+
+.my-books h2 {
+
+    font-family:
+
+        "Cinzel",
+        serif;
+
+
+    font-size:
+
+        2.5rem;
+
+
+    text-align:
+
+        center;
+
+
+    color:
+
+        var(--wine);
+
+
+    border-bottom:
+
+        3px double var(--old-gold);
+
+
+    padding-bottom:
+
+        20px;
+
+}
+
+
+
+/* =========================================
+   BOOK NEWSPAPER GRID
+   ========================================= */
+
+
+.books-grid {
+
+    display:
+
+        grid;
+
+
+    grid-template-columns:
+
+        repeat(2,1fr);
+
+
+    gap:
+
+        25px;
+
+
+    margin-top:
+
+        30px;
+
+}
+
+
+
+/* =========================================
+   BOOK ARTICLE CARD
+   ========================================= */
+
+
+.book-card {
+
+    display:
+
+        grid;
+
+
+    grid-template-columns:
+
+        120px 1fr;
+
+
+    gap:
+
+        20px;
+
+
+    padding:
+
+        20px 0;
+
+
+    background:
+
+        transparent;
+
+
+    border-bottom:
+
+        1px solid rgba(90,60,40,.35);
+
+
+    box-shadow:
+
+        none;
+
+
+    border-radius:
+
+        0;
+
+
+    text-align:
+
+        left;
+
+
+    transition:
+
+        .3s ease;
+
+}
+
+
+
+.book-card:hover {
+
+    transform:
+
+        translateX(5px);
+
+}
+
+
+
+/* =========================================
+   BOOK COVER
+   ========================================= */
+
+
+.book-card img {
+
+    width:
+
+        110px;
+
+
+    height:
+
+        auto;
+
+
+    border-radius:
+
+        0;
+
+
+    border:
+
+        1px solid var(--old-gold);
+
+
+    box-shadow:
+
+        4px 8px 15px rgba(0,0,0,.25);
+
+}
+
+
+
+/* =========================================
+   BOOK INFORMATION
+   ========================================= */
+
+
+.book-card h3 {
+
+    margin:
+
+        0 0 8px;
+
+
+    font-family:
+
+        "Cinzel",
+        serif;
+
+
+    font-size:
+
+        1.4rem;
+
+
+    color:
+
+        var(--wine);
+
+}
+
+
+
+.book-card p {
+
+    font-size:
+
+        1rem;
+
+
+    line-height:
+
+        1.5;
+
+}
+
+
+
+/* Book category */
+
+.book-category {
+
+    font-family:
+
+        "Cinzel",
+        serif;
+
+
+    text-transform:
+
+        uppercase;
+
+
+    letter-spacing:
+
+        2px;
+
+
+    font-size:
+
+        .65rem;
+
+
+    color:
+
+        var(--old-gold);
+
+}
+
+
+
+/* =========================================
+   FEATURED BOOK ARTICLE
+   ========================================= */
+
+
+.featured-book {
+
+    display:
+
+        grid;
+
+
+    grid-template-columns:
+
+        180px 1fr;
+
+
+    gap:
+
+        30px;
+
+
+    padding:
+
+        30px;
+
+
+    background:
+
+        rgba(176,141,87,.12);
+
+
+    border:
+
+        1px solid var(--old-gold);
+
+
+    margin-bottom:
+
+        35px;
+
+}
+
+
+
+.featured-book img {
+
+    width:
+
+        160px;
+
+
+    border:
+
+        1px solid var(--old-gold);
+
+}
+
+
+
+.featured-book h2 {
+
+    border:
+
+        none;
+
+
+    padding:
+
+        0;
+
+}
+
+
+
+/* =========================================
+   BOOK EXCERPT
+   ========================================= */
+
+
+.book-excerpt {
+
+    margin-top:
+
+        15px;
+
+
+    padding:
+
+        15px;
+
+
+    border-left:
+
+        3px solid var(--gold);
+
+
+    font-style:
+
+        italic;
+
+
+    background:
+
+        rgba(90,60,40,.08);
+
+}
+
+
+
+/* =========================================
+   BOOK BUTTONS
+   ========================================= */
+
+
+.book-links {
+
+    display:
+
+        flex;
+
+
+    gap:
+
+        10px;
+
+
+    margin-top:
+
+        15px;
+
+
+    flex-wrap:
+
+        wrap;
+
+}
+
+
+
+.book-button {
+
+    display:
+
+        inline-block;
+
+
+    padding:
+
+        8px 16px;
+
+
+    background:
+
+        var(--wine);
+
+
+    color:
+
+        var(--paper);
+
+
+    font-family:
+
+        "Cinzel",
+        serif;
+
+
+    font-size:
+
+        .75rem;
+
+
+    letter-spacing:
+
+        1px;
+
+
+    text-transform:
+
+        uppercase;
+
+
+    border-radius:
+
+        0;
+
+
+    transition:
+
+        .3s ease;
+
+}
+
+
+
+.book-button:hover {
+
+    background:
+
+        var(--gold);
+
+
+    color:
+
+        var(--ink);
+
+}
+
+
+
+.book-button.secondary {
+
+    background:
+
+        transparent;
+
+
+    border:
+
+        1px solid var(--wine);
+
+
+    color:
+
+        var(--wine);
+
+}
+
+
+
+.book-button.disabled {
+
+    background:
+
+        #555;
+
+
+    opacity:
+
+        .6;
+
+
+}
+
+
+
+/* =========================================
+   MOBILE BOOK ARCHIVE
+   ========================================= */
+
+
+@media(max-width:768px){
+
+
+    .books-grid {
+
+        grid-template-columns:
+
+            1fr;
+
+    }
+
+
+
+    .book-card,
+    .featured-book {
+
+        grid-template-columns:
+
+            1fr;
+
+        text-align:
+
+            center;
+
+    }
+
+
+
+    .book-card img,
+    .featured-book img {
+
+        margin:
+
+            auto;
+
+    }
+
+}
+
+/* =========================================
+   JOURNAL ARCHIVE
+   Literary Newspaper Section
+   ========================================= */
+
+
+/* =========================================
+   JOURNAL HEADER
+   ========================================= */
+
+
+.journal-section {
+
+    padding:
+
+        35px 0;
+
+}
+
+
+
+.journal-section h2 {
+
+    text-align:
+
+        center;
+
+
+    font-family:
+
+        "Cinzel",
+        serif;
+
+
+    font-size:
+
+        2.5rem;
+
+
+    color:
+
+        var(--wine);
+
+
+    border-bottom:
+
+        3px double var(--old-gold);
+
+
+    padding-bottom:
+
+        20px;
+
+}
+
+
+
+/* =========================================
+   JOURNAL ARTICLES
+   ========================================= */
+
+
+.journal-entry {
+
+    background:
+
+        transparent;
+
+
+    padding:
+
+        30px 0;
+
+
+    margin-bottom:
+
+        25px;
+
+
+    border-bottom:
+
+        1px solid rgba(90,60,40,.35);
+
+
+    border-radius:
+
+        0;
+
+
+    box-shadow:
+
+        none;
+
+}
+
+
+
+/* Article title */
+
+.journal-entry h3 {
+
+    font-family:
+
+        "Cinzel",
+        serif;
+
+
+    color:
+
+        var(--wine);
+
+
+    font-size:
+
+        1.8rem;
+
+
+    margin-bottom:
+
+        10px;
+
+}
+
+
+
+/* Article metadata */
+
+.entry-meta {
+
+    display:
+
+        flex;
+
+
+    gap:
+
+        20px;
+
+
+    font-family:
+
+        "Cinzel",
+        serif;
+
+
+    text-transform:
+
+        uppercase;
+
+
+    letter-spacing:
+
+        2px;
+
+
+    font-size:
+
+        .7rem;
+
+
+    color:
+
+        var(--old-gold);
+
+
+    margin-bottom:
+
+        20px;
+
+}
+
+
+
+/* =========================================
+   ARTICLE TEXT COLUMNS
+   ========================================= */
+
+
+.entry-content {
+
+    column-count:
+
+        2;
+
+
+    column-gap:
+
+        35px;
+
+
+    text-align:
+
+        justify;
+
+}
+
+
+
+.entry-content p {
+
+    break-inside:
+
+        avoid;
+
+}
+
+
+
+/* =========================================
+   FEATURE ARTICLE
+   ========================================= */
+
+
+.feature-entry {
+
+    padding:
+
+        30px;
+
+
+    background:
+
+        rgba(176,141,87,.12);
+
+
+    border:
+
+        1px solid var(--old-gold);
+
+}
+
+
+
+.feature-entry h3 {
+
+    font-size:
+
+        2.2rem;
+
+}
+
+
+
+/* =========================================
+   READING DESK
+   ========================================= */
+
+
+.reading-desk {
+
+    display:
+
+        grid;
+
+
+    grid-template-columns:
+
+        repeat(3,1fr);
+
+
+    gap:
+
+        20px;
+
+
+    margin-top:
+
+        35px;
+
+}
+
+
+
+.reading-card {
+
+    padding:
+
+        20px;
+
+
+    background:
+
+        var(--paper-light);
+
+
+    border:
+
+        1px solid rgba(90,60,40,.35);
+
+
+}
+
+
+
+.reading-card h3 {
+
+    font-size:
+
+        1.3rem;
+
+}
+
+
+
+/* =========================================
+   ARCHIVE TAGS
+   ========================================= */
+
+
+.archive-tags {
+
+    display:
+
+        flex;
+
+
+    gap:
+
+        10px;
+
+
+    flex-wrap:
+
+        wrap;
+
+
+    margin-top:
+
+        20px;
+
+}
+
+
+
+.archive-tag {
+
+    padding:
+
+        5px 12px;
+
+
+    border:
+
+        1px solid var(--old-gold);
+
+
+    font-family:
+
+        "Cinzel",
+        serif;
+
+
+    font-size:
+
+        .7rem;
+
+
+    text-transform:
+
+        uppercase;
+
+
+    letter-spacing:
+
+        1px;
+
+
+}
+
+
+
+/* =========================================
+   NEWSLETTER SECTION
+   ========================================= */
+
+
+.newsletter-section {
+
+    margin-top:
+
+        40px;
+
+
+    padding:
+
+        30px;
+
+
+    border-top:
+
+        3px double var(--old-gold);
+
+
+    border-bottom:
+
+        3px double var(--old-gold);
+
+
+    text-align:
+
+        center;
+
+}
+
+
+
+.newsletter-section h2 {
+
+    border:
+
+        none;
+
+}
+
+
+
+.newsletter-list {
+
+    list-style:
+
+        none;
+
+
+    padding:
+
+        0;
+
+
+    display:
+
+        grid;
+
+
+    grid-template-columns:
+
+        repeat(2,1fr);
+
+
+    gap:
+
+        15px;
+
+}
+
+
+
+.newsletter-list li {
+
+    padding:
+
+        12px;
+
+
+    border-bottom:
+
+        1px solid rgba(90,60,40,.25);
+
+}
+
+
+
+.newsletter-list a {
+
+    color:
+
+        var(--wine);
+
+
+    font-family:
+
+        "Cinzel",
+        serif;
+
+}
+
+
+
+/* =========================================
+   ARTICLE IMAGE
+   ========================================= */
+
+
+.journal-image {
+
+    width:
+
+        100%;
+
+
+    max-height:
+
+        350px;
+
+
+    object-fit:
+
+        cover;
+
+
+    border:
+
+        1px solid var(--old-gold);
+
+
+    margin-bottom:
+
+        25px;
+
+}
+
+
+
+/* =========================================
+   MOBILE JOURNAL
+   ========================================= */
+
+
+@media(max-width:768px){
+
+
+    .entry-content {
+
+        column-count:
+
+            1;
+
+    }
+
+
+
+    .reading-desk {
+
+        grid-template-columns:
+
+            1fr;
+
+    }
+
+
+
+    .newsletter-list {
+
+        grid-template-columns:
+
+            1fr;
+
+    }
+
+
+
+    .entry-meta {
+
+        flex-direction:
+
+            column;
+
+        gap:
+
+            5px;
+
+    }
+
+}
+
+/* =========================================
+   NEWSLETTER / EDITOR'S DESK
+   ========================================= */
+
+
+.newsletter-section {
+
+    margin:
+
+        50px 0;
+
+
+    padding:
+
+        35px;
+
+
+    background:
+
+        rgba(176,141,87,.12);
+
+
+    border-top:
+
+        3px double var(--old-gold);
+
+
+    border-bottom:
+
+        3px double var(--old-gold);
+
+
+    text-align:
+
+        center;
+
+}
+
+
+
+.newsletter-section h2 {
+
+    font-family:
+
+        "Cinzel",
+        serif;
+
+
+    color:
+
+        var(--wine);
+
+
+    border:
+
+        none;
+
+
+    font-size:
+
+        2rem;
+
+}
+
+
+
+.newsletter-section p {
+
+    max-width:
+
+        650px;
+
+
+    margin:
+
+        auto;
+
+
+    text-align:
+
+        center;
+
+}
+
+
+
+/* =========================================
+   FORMS
+   Correspondence style
+   ========================================= */
+
+
+form {
+
+    display:
+
+        flex;
+
+
+    flex-direction:
+
+        column;
+
+
+    gap:
+
+        15px;
+
+
+    max-width:
+
+        450px;
+
+
+    margin:
+
+        30px auto 0;
+
+}
+
+
+
+input,
+textarea {
+
+    padding:
+
+        14px;
+
+
+    background:
+
+        var(--paper);
+
+
+    color:
+
+        var(--ink);
+
+
+    border:
+
+        1px solid var(--old-gold);
+
+
+    border-radius:
+
+        0;
+
+
+    font-family:
+
+        "Cormorant Garamond",
+        serif;
+
+
+    font-size:
+
+        1rem;
+
+}
+
+
+
+textarea {
+
+    min-height:
+
+        120px;
+
+}
+
+
+
+input::placeholder,
+textarea::placeholder {
+
+    color:
+
+        var(--soft-ink);
+
+}
+
+
+
+/* =========================================
+   BUTTONS
+   Newspaper stamp style
+   ========================================= */
+
+
+button {
+
+    padding:
+
+        12px 25px;
+
+
+    background:
+
+        var(--wine);
+
+
+    color:
+
+        var(--paper);
+
+
+    border:
+
+        none;
+
+
+    font-family:
+
+        "Cinzel",
+        serif;
+
+
+    letter-spacing:
+
+        2px;
+
+
+    text-transform:
+
+        uppercase;
+
+
+    cursor:
+
+        pointer;
+
+
+    transition:
+
+        .3s ease;
+
+}
+
+
+
+button:hover {
+
+    background:
+
+        var(--gold);
+
+
+    color:
+
+        var(--ink);
+
+}
+
+
+
+/* =========================================
+   CONTACT SECTION
+   ========================================= */
+
+
+.contact-section {
+
+    display:
+
+        grid;
+
+
+    grid-template-columns:
+
+        repeat(2,1fr);
+
+
+    gap:
+
+        30px;
+
+
+    padding:
+
+        35px 0;
+
+}
+
+
+
+.contact-box {
+
+    padding:
+
+        25px;
+
+
+    border:
+
+        1px solid rgba(90,60,40,.35);
+
+}
+
+
+
+.contact-box h3 {
+
+    margin-top:
+
+        0;
+
+}
+
+
+
+.contact-box p {
+
+    font-size:
+
+        1.1rem;
+
+}
+
+
+
+/* =========================================
+   FOOTER
+   Final newspaper page
+   ========================================= */
+
+
+footer {
+
+    text-align:
+
+        center;
+
+
+    padding:
+
+        30px;
+
+
+    background:
+
+        var(--paper);
+
+
+    color:
+
+        var(--ink);
+
+
+    border-top:
+
+        5px double var(--old-gold);
+
+
+    font-family:
+
+        "Cormorant Garamond",
+        serif;
+
+}
+
+
+
+.footer-title {
+
+    font-family:
+
+        "Great Vibes",
+        cursive;
+
+
+    font-size:
+
+        3rem;
+
+
+    color:
+
+        var(--wine);
+
+}
+
+
+
+.footer-meta {
+
+    font-family:
+
+        "Cinzel",
+        serif;
+
+
+    text-transform:
+
+        uppercase;
+
+
+    letter-spacing:
+
+        3px;
+
+
+    font-size:
+
+        .7rem;
+
+
+    color:
+
+        var(--old-gold);
+
+}
+
+
+
+/* =========================================
+   FOOTER LINKS
+   ========================================= */
+
+
+footer a {
+
+    color:
+
+        var(--wine);
+
+
+    margin:
+
+        0 8px;
+
+}
+
+
+
+footer a:hover {
+
+    color:
+
+        var(--gold);
+
+}
+
+
+
+/* =========================================
+   MOBILE NEWSLETTER
+   ========================================= */
+
+
+@media(max-width:768px){
+
+
+    .contact-section {
+
+        grid-template-columns:
+
+            1fr;
+
+    }
+
+
+
+}
+
+/* =========================================
+   LORE SYSTEM
+   Hidden Archive Notes
+   ========================================= */
+
+
+/* =========================================
+   LORE CONTAINER
+   ========================================= */
+
+
+.lore-container {
+
+    display:
+
+        grid;
+
+
+    grid-template-columns:
+
+        repeat(3,1fr);
+
+
+    gap:
+
+        25px;
+
+
+    margin:
+
+        35px 0;
+
+}
+
+
+
+/* =========================================
+   LORE CARD
+   Ancient document style
+   ========================================= */
+
+
+.lore-card {
+
+    position:
+
+        relative;
+
+
+    padding:
+
+        25px;
+
+
+    background:
+
+        var(--paper-light);
+
+
+    border:
+
+        1px solid var(--old-gold);
+
+
+    box-shadow:
+
+        5px 8px 20px rgba(0,0,0,.15);
+
+
+    overflow:
+
+        hidden;
+
+}
+
+
+
+/* Torn paper effect */
+
+.lore-card::before {
+
+    content:
+
+        "ARCHIVE";
+
+
+    position:
+
+        absolute;
+
+
+    top:
+
+        10px;
+
+
+    right:
+
+        10px;
+
+
+    font-family:
+
+        "Cinzel",
+        serif;
+
+
+    font-size:
+
+        .55rem;
+
+
+    letter-spacing:
+
+        3px;
+
+
+    color:
+
+        var(--old-gold);
+
+}
+
+
+
+.lore-card h3 {
+
+    font-family:
+
+        "Cinzel",
+        serif;
+
+
+    color:
+
+        var(--wine);
+
+
+    margin-top:
+
+        15px;
+
+}
+
+
+
+.lore-card p {
+
+    font-size:
+
+        1rem;
+
+}
+
+
+
+/* =========================================
+   HIDDEN LORE HOVER
+   ========================================= */
+
+
+.lore-hover {
+
+    position:
+
+        relative;
+
+
+    display:
+
+        inline-block;
+
+
+    cursor:
+
+        help;
+
+
+    border-bottom:
+
+        1px dotted var(--wine);
+
+}
+
+
+
+/* Hidden note */
+
+.lore-text {
+
+    position:
+
+        absolute;
+
+
+    bottom:
+
+        140%;
+
+
+    left:
+
+        50%;
+
+
+    transform:
+
+        translateX(-50%);
+
+
+    width:
+
+        240px;
+
+
+    padding:
+
+        15px;
+
+
+    background:
+
+        var(--ink);
+
+
+    color:
+
+        var(--paper);
+
+
+    border:
+
+        1px solid var(--gold);
+
+
+    font-size:
+
+        .85rem;
+
+
+    text-align:
+
+        center;
+
+
+    opacity:
+
+        0;
+
+
+    pointer-events:
+
+        none;
+
+
+    transition:
+
+        .3s ease;
+
+
+    z-index:
+
+        20;
+
+}
+
+
+
+/* Small arrow */
+
+.lore-text::after {
+
+    content:
+
+        "";
+
+
+    position:
+
+        absolute;
+
+
+    top:
+
+        100%;
+
+
+    left:
+
+        50%;
+
+
+    transform:
+
+        translateX(-50%);
+
+
+    border-width:
+
+        8px;
+
+
+    border-style:
+
+        solid;
+
+
+    border-color:
+
+        var(--ink) transparent transparent transparent;
+
+}
+
+
+
+.lore-hover:hover .lore-text {
+
+    opacity:
+
+        1;
+
+}
+
+
+
+/* =========================================
+   MANUSCRIPT NOTES
+   ========================================= */
+
+
+.manuscript-note {
+
+    margin:
+
+        25px 0;
+
+
+    padding:
+
+        25px;
+
+
+    background:
+
+        rgba(176,141,87,.12);
+
+
+    border-left:
+
+        4px solid var(--gold);
+
+
+    font-style:
+
+        italic;
+
+}
+
+
+
+.manuscript-note h3 {
+
+    font-size:
+
+        1.4rem;
+
+}
+
+
+
+/* =========================================
+   RESEARCH FRAGMENTS
+   ========================================= */
+
+
+.research-fragment {
+
+    padding:
+
+        20px;
+
+
+    margin:
+
+        20px 0;
+
+
+    border:
+
+        1px dashed var(--old-gold);
+
+
+    background:
+
+        rgba(90,60,40,.05);
+
+}
+
+
+
+.research-fragment::before {
+
+    content:
+
+        "RESEARCH FRAGMENT";
+
+
+    display:
+
+        block;
+
+
+    font-family:
+
+        "Cinzel",
+        serif;
+
+
+    letter-spacing:
+
+        3px;
+
+
+    font-size:
+
+        .65rem;
+
+
+    color:
+
+        var(--old-gold);
+
+
+    margin-bottom:
+
+        10px;
+
+}
+
+
+
+/* =========================================
+   CHARACTER ARCHIVE
+   ========================================= */
+
+
+.character-file {
+
+    display:
+
+        grid;
+
+
+    grid-template-columns:
+
+        100px 1fr;
+
+
+    gap:
+
+        20px;
+
+
+    padding:
+
+        20px 0;
+
+
+    border-bottom:
+
+        1px solid rgba(90,60,40,.3);
+
+}
+
+
+
+.character-file img {
+
+    width:
+
+        100px;
+
+
+    height:
+
+        100px;
+
+
+    object-fit:
+
+        cover;
+
+
+    border:
+
+        1px solid var(--old-gold);
+
+}
+
+
+
+.character-file h3 {
+
+    margin:
+
+        0;
+
+}
+
+
+
+/* =========================================
+   MOBILE LORE
+   ========================================= */
+
+
+@media(max-width:768px){
+
+
+    .lore-container {
+
+        grid-template-columns:
+
+            1fr;
+
+    }
+
+
+
+    .character-file {
+
+        grid-template-columns:
+
+            1fr;
+
+
+        text-align:
+
+            center;
+
+    }
+
+}
+
+/* =========================================
+   SEASONAL ATMOSPHERE SYSTEM
+   Enchanted Newspaper Effects
+   ========================================= */
+
+
+/* =========================================
+   EFFECT CONTAINER
+   ========================================= */
+
+
+.season-effects {
+
+    position:
+
+        fixed;
+
+
+    inset:
+
+        0;
+
+
+    pointer-events:
+
+        none;
+
+
+    overflow:
+
+        hidden;
+
+
+    z-index:
+
+        999;
+
+}
+
+
+
+/* =========================================
+   GENERAL FALLING ANIMATION
+   ========================================= */
+
+
+@keyframes paperFall {
+
+
+    0% {
+
+        transform:
+
+            translateY(-10vh)
+            rotate(0deg);
+
+
+        opacity:
+
+            0;
+
+    }
+
+
+
+    15% {
+
+        opacity:
+
+            .8;
+
+    }
+
+
+
+    100% {
+
+        transform:
+
+            translateY(110vh)
+            rotate(360deg);
+
+
+        opacity:
+
+            0;
+
+    }
+
+}
+
+
+
+/* =========================================
+   AUTUMN
+   Pressed leaves aesthetic
+   ========================================= */
+
+
+.leaf {
+
+
+    position:
+
+        absolute;
+
+
+    font-size:
+
+        20px;
+
+
+    color:
+
+        #A05A2C;
+
+
+    animation:
+
+        paperFall linear infinite;
+
+
+    opacity:
+
+        .65;
+
+
+}
+
+
+
+/* Add faded appearance */
+
+.autumn-theme .leaf {
+
+    filter:
+
+        sepia(.5);
+
+}
+
+
+
+/* =========================================
+   SPRING
+   Botanical manuscript style
+   ========================================= */
+
+
+.flower {
+
+
+    position:
+
+        absolute;
+
+
+    font-size:
+
+        18px;
+
+
+    color:
+
+        #C8A45D;
+
+
+    animation:
+
+        paperFall linear infinite;
+
+
+    opacity:
+
+        .6;
+
+}
+
+
+
+/* =========================================
+   WINTER
+   Antique snow effect
+   ========================================= */
+
+
+.snowflake {
+
+
+    position:
+
+        absolute;
+
+
+    color:
+
+        #CDB58E;
+
+
+    font-size:
+
+        16px;
+
+
+    animation:
+
+        paperFall linear infinite;
+
+
+    opacity:
+
+        .7;
+
+}
+
+
+
+/* Snow at bottom */
+
+.snow-ground {
+
+
+    position:
+
+        fixed;
+
+
+    bottom:
+
+        0;
+
+
+    left:
+
+        0;
+
+
+    width:
+
+        100%;
+
+
+    height:
+
+        0;
+
+
+    background:
+
+        rgba(230,216,195,.65);
+
+
+    transition:
+
+        height 4s ease;
+
+
+    z-index:
+
+        998;
+
+
+    pointer-events:
+
+        none;
+
+}
+
+
+
+/* =========================================
+   VALENTINE
+   Romantic Letter Effect
+   ========================================= */
+
+
+.dove-heart {
+
+
+    position:
+
+        fixed;
+
+
+    top:
+
+        20%;
+
+
+    left:
+
+        -150px;
+
+
+    font-size:
+
+        28px;
+
+
+    color:
+
+        var(--wine);
+
+
+    animation:
+
+        letterAcross 15s linear infinite;
+
+
+    z-index:
+
+        1000;
+
+}
+
+
+
+@keyframes letterAcross {
+
+
+    0% {
+
+        transform:
+
+            translateX(0)
+            rotate(-10deg);
+
+
+        opacity:
+
+            0;
+
+    }
+
+
+
+    20% {
+
+        opacity:
+
+            .9;
+
+    }
+
+
+
+    50% {
+
+        transform:
+
+            translateX(60vw)
+            rotate(10deg);
+
+    }
+
+
+
+    100% {
+
+        transform:
+
+            translateX(120vw)
+            rotate(-5deg);
+
+
+        opacity:
+
+            0;
+
+    }
+
+}
+
+
+
+/* =========================================
+   HALLOWEEN
+   Gothic Archive Mood
+   ========================================= */
+
+
+.walking-cat {
+
+
+    position:
+
+        fixed;
+
+
+    bottom:
+
+        20px;
+
+
+    left:
+
+        -100px;
+
+
+    font-size:
+
+        38px;
+
+
+    color:
+
+        var(--ink);
+
+
+    animation:
+
+        catWalk 15s linear forwards;
+
+
+    z-index:
+
+        1001;
+
+}
+
+
+
+@keyframes catWalk {
+
+
+    0% {
+
+        left:
+
+            -100px;
+
+    }
+
+
+
+    100% {
+
+        left:
+
+            110vw;
+
+    }
+
+}
+
+
+
+/* =========================================
+   SEASONAL PAGE TINTS
+   ========================================= */
+
+
+/* Autumn */
+
+.autumn-theme main {
+
+    box-shadow:
+
+        0 25px 70px rgba(80,40,20,.7);
+
+}
+
+
+
+/* Christmas */
+
+.christmas-theme {
+
+    background:
+
+        #11100f;
+
+}
+
+
+
+.christmas-theme main {
+
+    border:
+
+        1px solid var(--gold);
+
+}
+
+
+
+/* Halloween */
+
+.halloween-theme main {
+
+    border:
+
+        1px solid var(--wine);
+
+}
+
+
+
+/* Valentine */
+
+.valentine-theme main {
+
+    border:
+
+        1px solid var(--wine);
+
+}
+
+
+
+/* =========================================
+   REDUCED MOTION
+   Accessibility
+   ========================================= */
+
+
+@media(prefers-reduced-motion: reduce){
+
+
+    .leaf,
+    .flower,
+    .snowflake,
+    .dove-heart,
+    .walking-cat {
+
+        animation:
+
+            none;
+
+    }
+
+}
+
+/* =========================================
+   FINAL ANIMATIONS
+   Salt & Paper Stories
+   ========================================= */
+
+
+/* =========================================
+   PAGE ARRIVAL
+   Newspaper unfolding effect
+   ========================================= */
+
+
+@keyframes paperReveal {
+
+
+    from {
+
+        opacity:
+
+            0;
+
+
+        transform:
+
+            translateY(20px);
+
+    }
+
+
+
+    to {
+
+        opacity:
+
+            1;
+
+
+        transform:
+
+            translateY(0);
+
+    }
+
+}
+
+
+
+main {
+
+    animation:
+
+        paperReveal .8s ease forwards;
+
+}
+
+
+
+/* =========================================
+   ARTICLE APPEARANCE
+   ========================================= */
+
+
+.article-block,
+.book-card,
+.journal-entry,
+.lore-card,
+.writer-note {
+
+
+    animation:
+
+        fadeArticle .6s ease both;
+
+
+}
+
+
+
+@keyframes fadeArticle {
+
+
+    from {
+
+        opacity:
+
+            0;
+
+
+        transform:
+
+            translateY(15px);
+
+    }
+
+
+
+    to {
+
+        opacity:
+
+            1;
+
+
+        transform:
+
+            translateY(0);
+
+    }
+
+}
+
+
+
+/* =========================================
+   IMAGE DETAILS
+   Old photograph effect
+   ========================================= */
+
+
+img {
+
+    filter:
+
+        sepia(.12)
+        contrast(1.03);
+
+
+    transition:
+
+        .4s ease;
+
+}
+
+
+
+img:hover {
+
+
+    filter:
+
+        sepia(0)
+        contrast(1.05);
+
+
+}
+
+
+
+/* =========================================
+   EDITORIAL HOVER
+   ========================================= */
+
+
+.article-block:hover,
+.book-card:hover,
+.lore-card:hover {
+
+
+    box-shadow:
+
+        0 10px 30px rgba(0,0,0,.12);
+
+
+}
+
+
+
+/* =========================================
+   PAPER EDGE EFFECT
+   ========================================= */
+
+
+main::after {
+
+
+    content:
+
+        "";
+
+
+    position:
+
+        absolute;
+
+
+    inset:
+
+        20px;
+
+
+    border:
+
+        1px solid rgba(140,106,61,.25);
+
+
+    pointer-events:
+
+        none;
+
+}
+
+
+
+/* =========================================
+   BUTTON PRESS EFFECT
+   ========================================= */
+
+
+button:active,
+.book-button:active,
+.hero-button:active {
+
+
+    transform:
+
+        translateY(2px);
+
+}
+
+
+
+/* =========================================
+   SCROLL REVEAL SUPPORT
+   ========================================= */
+
+
+.reveal {
+
+
+    opacity:
+
+        0;
+
+
+    transform:
+
+        translateY(25px);
+
+
+    transition:
+
+        .7s ease;
+
+}
+
+
+
+.reveal.visible {
+
+
+    opacity:
+
+        1;
+
+
+    transform:
+
+        translateY(0);
+
+}
+
+
+
+/* =========================================
+   FINAL MOBILE NEWSPAPER MODE
+   ========================================= */
+
+
+@media(max-width:900px){
+
+
+    main {
+
+        margin:
+
+            15px;
+
+
+        padding:
+
+            25px;
+
+    }
+
+
+
+    h1 {
+
+        font-size:
+
+            3rem;
+
+    }
+
+
+
+    h2 {
+
+        font-size:
+
+            1.8rem;
+
+    }
+
+
+
+    p {
+
+        font-size:
+
+            16px;
+
+    }
+
+
+
+}
+
+
+
+/* =========================================
+   SMALL MOBILE
+   ========================================= */
+
+
+@media(max-width:480px){
+
+
+    main {
+
+        padding:
+
+            18px;
+
+    }
+
+
+
+    header h1 {
+
+        font-size:
+
+            3rem;
+
+    }
+
+
+
+    .hero-main {
+
+        padding:
+
+            15px;
+
+    }
+
+
+
+    .book-card {
+
+        display:
+
+            block;
+
+    }
+
+
+
+    .book-card img {
+
+        width:
+
+            90px;
+
+
+        margin-bottom:
+
+            15px;
+
+    }
+
+
+
+}
+
+
+
+/* =========================================
+   PRINT FRIENDLY MODE
+   ========================================= */
+
+
+@media print {
+
+
+    body {
+
+        background:
+
+            white;
+
+    }
+
+
+
+    main {
+
+        box-shadow:
+
+            none;
+
+
+        max-width:
+
+            100%;
+
+    }
+
+
+
+    nav,
+    .season-effects,
+    button {
+
+        display:
+
+            none;
+
+    }
+
+
+}
+
+/* =========================================
+   WEEKLY GAZETTE PAGES
+   ========================================= */
+
+
+.paper-page {
+
+    max-width:1200px;
+
+    margin:40px auto;
+
+    padding:40px;
+
+    background:#F4EBDD;
+
+    color:#2B2118;
+
+    border:1px solid #A1734A;
+
+    box-shadow:
+        0 15px 40px rgba(0,0,0,.2);
+
+}
+
+
+
+.column-header {
+
+    text-align:center;
+
+    padding:40px 20px;
+
+    border-bottom:
+        3px double #A1734A;
+
+}
+
+
+
+.column-header h1 {
+
+    color:#8C6A3D;
+
+}
+
+
+
+.featured-article {
+
+    margin:40px 0;
+
+    padding:30px;
+
+    background:#E8DCC8;
+
+    border:
+        1px solid #A1734A;
+
+}
+
+
+
+.article-grid {
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(2,1fr);
+
+    gap:25px;
+
+}
+
+
+
+.writer-note {
+
+    margin-top:40px;
+
+    padding:25px;
+
+    border-top:
+        1px solid #A1734A;
+
+}
+
+
+
+.story-label {
+
+    font-size:14px;
+
+    letter-spacing:2px;
+
+    color:#5B1F2A;
+
+    text-transform:uppercase;
+
+}
+
+
+
+.entry-meta {
+
+    font-size:14px;
+
+    color:#6B5845;
+
+}
+
+
+
+@media(max-width:768px){
+
+    .paper-page{
+
+        margin:15px;
+
+        padding:20px;
+
+    }
+
+
+    .article-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+}
+
+
+/* =========================================
+   SALT & PAPER STORIES — ROSE & RUBY EDITION
+   Romantic blush, rose, and cranberry palette
+   ========================================= */
+
+:root {
+    --paper: #FFF5F5;
+    --paper-light: #FFF9F7;
+    --paper-aged: #F2D7DD;
+    --ink: #482632;
+    --soft-ink: #79505C;
+    --black: #381722;
+    --deep-black: #260E17;
+    --smoke: #6A3346;
+    --ash: #7D4054;
+    --gold: #C47A88;
+    --old-gold: #B66B7B;
+    --wine: #A51D43;
+    --deep-wine: #78142F;
+    --wood: #895064;
+    --bg: #FFF1F4;
+    --text: #482632;
+    --accent: #B66B7B;
+    --accent-two: #A51D43;
+    --border: #D9A0AC;
+    --panel: #FFF9F7;
+    --muted: #855765;
+}
+
+body {
+    background:
+        radial-gradient(circle at top, #FBE0E7, #FFF4F6 68%);
+    color: var(--text);
+}
+
+main {
+    background: var(--paper);
+    color: var(--ink);
+    box-shadow: 0 20px 55px rgba(117, 30, 58, .14);
+}
+
+main::before {
+    background: radial-gradient(rgba(165, 29, 67, .07) 1px, transparent 1px);
+    opacity: .2;
+}
+
+section {
+    border-bottom-color: rgba(165, 29, 67, .18);
+}
+
+h1, h2, h3 {
+    color: var(--wine);
+}
+
+h2 {
+    border-bottom-color: var(--border);
+}
+
+p { color: var(--ink); }
+
+a { color: var(--wine); }
+a:hover {
+    color: #D04C6D;
+    border-bottom-color: #D04C6D;
+}
+
+.newspaper-divider::before,
+.newspaper-divider::after {
+    background: var(--border);
+}
+
+header, footer {
+    background: var(--paper);
+    color: var(--ink);
+    border-color: var(--border);
+}
+
+header {
+    border-bottom-color: var(--border);
+}
+
+.masthead-top, .masthead-subtitle {
+    color: var(--soft-ink);
+}
+
+header h1, .author-text h2, .footer-title {
+    color: var(--wine);
+}
+
+.masthead-meta {
+    border-color: var(--border);
+}
+
+nav {
+    border-color: var(--border);
+}
+
+nav a {
+    color: var(--ink);
+    border-right-color: rgba(165, 29, 67, .16);
+}
+
+nav a:hover {
+    background: var(--wine);
+    color: #FFF9F7;
+}
+
+nav a.active {
+    background: #E9B7C4;
+    color: var(--deep-wine);
+}
+
+.hero, .feature-strip {
+    border-color: var(--border);
+}
+
+.hero-main, .reading-card, .writer-note, .lore-card, .clipping {
+    background: var(--paper-light);
+    border-color: rgba(165, 29, 67, .2);
+}
+
+.hero-card, .feature-box, .article-small, .article-block,
+.book-card, .journal-entry, .contact-box, .timeline-entry {
+    border-color: rgba(165, 29, 67, .18);
+}
+
+.hero-button, .book-button, button {
+    background: var(--wine);
+    color: #FFF9F7;
+}
+
+.hero-button:hover, .book-button:hover, button:hover {
+    background: #D04C6D;
+    color: #FFF9F7;
+}
+
+.feature-box, .article-block {
+    border-color: var(--border);
+}
+
+.sidebar-box {
+    background: rgba(232, 183, 196, .2);
+    border-color: var(--border);
+}
+
+.pull-quote, .author-text h2 {
+    color: var(--wine);
+}
+
+.pull-quote {
+    border-color: var(--border);
+}
+
+.clipping {
+    box-shadow: 5px 8px 15px rgba(117, 30, 58, .12);
+}
+
+.date-stamp, .archive-tag {
+    border-color: var(--border);
+    color: var(--wine);
+}
+
+.ornamental-divider {
+    color: var(--accent);
+}
+
+.author-photo {
+    border-color: var(--paper-light);
+    outline-color: var(--border);
+    box-shadow: 0 15px 35px rgba(117, 30, 58, .14);
+    filter: none;
+}
+
+.photo-caption { color: var(--soft-ink); }
+
+.author-quote, .manuscript-note, .book-excerpt {
+    background: rgba(232, 183, 196, .18);
+    border-left-color: var(--accent);
+}
+
+.writer-note, .reading-card, .lore-card {
+    border-color: rgba(165, 29, 67, .2);
+}
+
+.author-timeline, .timeline-entry {
+    border-color: rgba(165, 29, 67, .18);
+}
+
+.timeline-year, .book-card h3, .book-category,
+.sidebar-title, .clipping-title, .journal-entry h3 {
+    color: var(--wine);
+}
+
+.my-books h2, .journal-section h2 {
+    border-bottom-color: var(--border);
+}
+
+.book-card img, .featured-book img, .journal-image, .hero-main img {
+    border-color: var(--border);
+}
+
+.featured-book, .feature-entry {
+    background: rgba(232, 183, 196, .18);
+    border-color: var(--border);
+}
+
+.book-excerpt {
+    border-left-color: var(--accent);
+}
+
+.book-button.secondary {
+    border-color: var(--wine);
+    color: var(--wine);
+    background: transparent;
+}
+
+.book-button.secondary:hover {
+    background: var(--wine);
+    color: var(--paper);
+}
+
+.journal-entry {
+    border-bottom-color: rgba(165, 29, 67, .18);
+}
+
+.entry-meta, .footer-meta, .research-fragment::before {
+    color: var(--accent-two);
+}
+
+.archive-tag {
+    border-color: var(--border);
+}
+
+.newsletter-section {
+    background: rgba(232, 183, 196, .16);
+    border-color: var(--border);
+}
+
+input, textarea {
+    background: var(--paper-light);
+    color: var(--ink);
+    border-color: var(--border);
+}
+
+input::placeholder, textarea::placeholder {
+    color: var(--soft-ink);
+}
+
+footer {
+    border-top-color: var(--border);
+}
+
+footer a { color: var(--wine); }
+footer a:hover { color: #D04C6D; }
+
+.lore-card::before, .lore-card h3 {
+    color: var(--wine);
+}
+
+.lore-hover { border-bottom-color: var(--wine); }
+
+.lore-text {
+    background: var(--deep-wine);
+    color: var(--paper);
+    border-color: var(--accent);
+}
+
+.lore-text::after {
+    border-color: var(--deep-wine) transparent transparent transparent;
+}
+
+.manuscript-note {
+    border-left-color: var(--accent);
+}
+
+.research-fragment {
+    border-color: var(--border);
+    background: rgba(232, 183, 196, .12);
+}
+
+/* Preserve the special themed pages while bringing their accents into the new palette. */
+body[data-theme="babylonia"] {
+    --accent: #D5A6B1;
+    --accent-two: #B66B7B;
+    --border: #D5A6B1;
+}
+
+body[data-theme="gothic"] {
+    --accent: #D5A6B1;
+    --accent-two: #A51D43;
+    --border: #895064;
+}
+
+body[data-theme="newspaper"] {
+    --bg: #FFF1F4;
+    --panel: #FFF9F7;
+    --text: #482632;
+    --muted: #79505C;
+    --accent: #B66B7B;
+    --accent-2: #A51D43;
+    --border: #D9A0AC;
+}
