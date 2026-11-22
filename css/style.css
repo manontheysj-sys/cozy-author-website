@@ -5981,3 +5981,439 @@ button:active,
 
 
 }
+
+/* =========================================
+   WEEKLY GAZETTE PAGES
+   ========================================= */
+
+
+.paper-page {
+
+    max-width:1200px;
+
+    margin:40px auto;
+
+    padding:40px;
+
+    background:#F4EBDD;
+
+    color:#2B2118;
+
+    border:1px solid #A1734A;
+
+    box-shadow:
+        0 15px 40px rgba(0,0,0,.2);
+
+}
+
+
+
+.column-header {
+
+    text-align:center;
+
+    padding:40px 20px;
+
+    border-bottom:
+        3px double #A1734A;
+
+}
+
+
+
+.column-header h1 {
+
+    color:#8C6A3D;
+
+}
+
+
+
+.featured-article {
+
+    margin:40px 0;
+
+    padding:30px;
+
+    background:#E8DCC8;
+
+    border:
+        1px solid #A1734A;
+
+}
+
+
+
+.article-grid {
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(2,1fr);
+
+    gap:25px;
+
+}
+
+
+
+.writer-note {
+
+    margin-top:40px;
+
+    padding:25px;
+
+    border-top:
+        1px solid #A1734A;
+
+}
+
+
+
+.story-label {
+
+    font-size:14px;
+
+    letter-spacing:2px;
+
+    color:#5B1F2A;
+
+    text-transform:uppercase;
+
+}
+
+
+
+.entry-meta {
+
+    font-size:14px;
+
+    color:#6B5845;
+
+}
+
+
+
+@media(max-width:768px){
+
+    .paper-page{
+
+        margin:15px;
+
+        padding:20px;
+
+    }
+
+
+    .article-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+}
+
+
+/* =========================================
+   SALT & PAPER STORIES — ROSE & RUBY EDITION
+   Romantic blush, rose, and cranberry palette
+   ========================================= */
+
+:root {
+    --paper: #FFF5F5;
+    --paper-light: #FFF9F7;
+    --paper-aged: #F2D7DD;
+    --ink: #482632;
+    --soft-ink: #79505C;
+    --black: #381722;
+    --deep-black: #260E17;
+    --smoke: #6A3346;
+    --ash: #7D4054;
+    --gold: #C47A88;
+    --old-gold: #B66B7B;
+    --wine: #A51D43;
+    --deep-wine: #78142F;
+    --wood: #895064;
+    --bg: #FFF1F4;
+    --text: #482632;
+    --accent: #B66B7B;
+    --accent-two: #A51D43;
+    --border: #D9A0AC;
+    --panel: #FFF9F7;
+    --muted: #855765;
+}
+
+body {
+    background:
+        radial-gradient(circle at top, #FBE0E7, #FFF4F6 68%);
+    color: var(--text);
+}
+
+main {
+    background: var(--paper);
+    color: var(--ink);
+    box-shadow: 0 20px 55px rgba(117, 30, 58, .14);
+}
+
+main::before {
+    background: radial-gradient(rgba(165, 29, 67, .07) 1px, transparent 1px);
+    opacity: .2;
+}
+
+section {
+    border-bottom-color: rgba(165, 29, 67, .18);
+}
+
+h1, h2, h3 {
+    color: var(--wine);
+}
+
+h2 {
+    border-bottom-color: var(--border);
+}
+
+p { color: var(--ink); }
+
+a { color: var(--wine); }
+a:hover {
+    color: #D04C6D;
+    border-bottom-color: #D04C6D;
+}
+
+.newspaper-divider::before,
+.newspaper-divider::after {
+    background: var(--border);
+}
+
+header, footer {
+    background: var(--paper);
+    color: var(--ink);
+    border-color: var(--border);
+}
+
+header {
+    border-bottom-color: var(--border);
+}
+
+.masthead-top, .masthead-subtitle {
+    color: var(--soft-ink);
+}
+
+header h1, .author-text h2, .footer-title {
+    color: var(--wine);
+}
+
+.masthead-meta {
+    border-color: var(--border);
+}
+
+nav {
+    border-color: var(--border);
+}
+
+nav a {
+    color: var(--ink);
+    border-right-color: rgba(165, 29, 67, .16);
+}
+
+nav a:hover {
+    background: var(--wine);
+    color: #FFF9F7;
+}
+
+nav a.active {
+    background: #E9B7C4;
+    color: var(--deep-wine);
+}
+
+.hero, .feature-strip {
+    border-color: var(--border);
+}
+
+.hero-main, .reading-card, .writer-note, .lore-card, .clipping {
+    background: var(--paper-light);
+    border-color: rgba(165, 29, 67, .2);
+}
+
+.hero-card, .feature-box, .article-small, .article-block,
+.book-card, .journal-entry, .contact-box, .timeline-entry {
+    border-color: rgba(165, 29, 67, .18);
+}
+
+.hero-button, .book-button, button {
+    background: var(--wine);
+    color: #FFF9F7;
+}
+
+.hero-button:hover, .book-button:hover, button:hover {
+    background: #D04C6D;
+    color: #FFF9F7;
+}
+
+.feature-box, .article-block {
+    border-color: var(--border);
+}
+
+.sidebar-box {
+    background: rgba(232, 183, 196, .2);
+    border-color: var(--border);
+}
+
+.pull-quote, .author-text h2 {
+    color: var(--wine);
+}
+
+.pull-quote {
+    border-color: var(--border);
+}
+
+.clipping {
+    box-shadow: 5px 8px 15px rgba(117, 30, 58, .12);
+}
+
+.date-stamp, .archive-tag {
+    border-color: var(--border);
+    color: var(--wine);
+}
+
+.ornamental-divider {
+    color: var(--accent);
+}
+
+.author-photo {
+    border-color: var(--paper-light);
+    outline-color: var(--border);
+    box-shadow: 0 15px 35px rgba(117, 30, 58, .14);
+    filter: none;
+}
+
+.photo-caption { color: var(--soft-ink); }
+
+.author-quote, .manuscript-note, .book-excerpt {
+    background: rgba(232, 183, 196, .18);
+    border-left-color: var(--accent);
+}
+
+.writer-note, .reading-card, .lore-card {
+    border-color: rgba(165, 29, 67, .2);
+}
+
+.author-timeline, .timeline-entry {
+    border-color: rgba(165, 29, 67, .18);
+}
+
+.timeline-year, .book-card h3, .book-category,
+.sidebar-title, .clipping-title, .journal-entry h3 {
+    color: var(--wine);
+}
+
+.my-books h2, .journal-section h2 {
+    border-bottom-color: var(--border);
+}
+
+.book-card img, .featured-book img, .journal-image, .hero-main img {
+    border-color: var(--border);
+}
+
+.featured-book, .feature-entry {
+    background: rgba(232, 183, 196, .18);
+    border-color: var(--border);
+}
+
+.book-excerpt {
+    border-left-color: var(--accent);
+}
+
+.book-button.secondary {
+    border-color: var(--wine);
+    color: var(--wine);
+    background: transparent;
+}
+
+.book-button.secondary:hover {
+    background: var(--wine);
+    color: var(--paper);
+}
+
+.journal-entry {
+    border-bottom-color: rgba(165, 29, 67, .18);
+}
+
+.entry-meta, .footer-meta, .research-fragment::before {
+    color: var(--accent-two);
+}
+
+.archive-tag {
+    border-color: var(--border);
+}
+
+.newsletter-section {
+    background: rgba(232, 183, 196, .16);
+    border-color: var(--border);
+}
+
+input, textarea {
+    background: var(--paper-light);
+    color: var(--ink);
+    border-color: var(--border);
+}
+
+input::placeholder, textarea::placeholder {
+    color: var(--soft-ink);
+}
+
+footer {
+    border-top-color: var(--border);
+}
+
+footer a { color: var(--wine); }
+footer a:hover { color: #D04C6D; }
+
+.lore-card::before, .lore-card h3 {
+    color: var(--wine);
+}
+
+.lore-hover { border-bottom-color: var(--wine); }
+
+.lore-text {
+    background: var(--deep-wine);
+    color: var(--paper);
+    border-color: var(--accent);
+}
+
+.lore-text::after {
+    border-color: var(--deep-wine) transparent transparent transparent;
+}
+
+.manuscript-note {
+    border-left-color: var(--accent);
+}
+
+.research-fragment {
+    border-color: var(--border);
+    background: rgba(232, 183, 196, .12);
+}
+
+/* Preserve the special themed pages while bringing their accents into the new palette. */
+body[data-theme="babylonia"] {
+    --accent: #D5A6B1;
+    --accent-two: #B66B7B;
+    --border: #D5A6B1;
+}
+
+body[data-theme="gothic"] {
+    --accent: #D5A6B1;
+    --accent-two: #A51D43;
+    --border: #895064;
+}
+
+body[data-theme="newspaper"] {
+    --bg: #FFF1F4;
+    --panel: #FFF9F7;
+    --text: #482632;
+    --muted: #79505C;
+    --accent: #B66B7B;
+    --accent-2: #A51D43;
+    --border: #D9A0AC;
+}
+
